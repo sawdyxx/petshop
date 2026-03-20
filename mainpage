@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PawPalace | Только позитивные хвостики!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error": "#b02500",
+                        "on-background": "#312f25",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f7f0e1",
+                        "primary": "#904800",
+                        "background": "#fdf6e8",
+                        "surface-tint": "#904800",
+                        "on-tertiary-fixed-variant": "#006c28",
+                        "tertiary-dim": "#005d21",
+                        "secondary-fixed-dim": "#a5c5ff",
+                        "inverse-on-surface": "#a29c90",
+                        "primary-container": "#fc8200",
+                        "outline-variant": "#b2ada0",
+                        "inverse-primary": "#fc8200",
+                        "on-tertiary-fixed": "#004c1a",
+                        "error-container": "#f95630",
+                        "on-primary-fixed-variant": "#4c2300",
+                        "primary-fixed": "#fc8200",
+                        "surface-bright": "#fdf6e8",
+                        "surface": "#fdf6e8",
+                        "on-tertiary-container": "#006123",
+                        "on-secondary-fixed": "#00336b",
+                        "secondary-container": "#bcd2ff",
+                        "on-error": "#ffefec",
+                        "on-secondary-fixed-variant": "#004f9e",
+                        "primary-dim": "#7e3e00",
+                        "secondary-dim": "#004e9d",
+                        "on-primary-container": "#3f1c00",
+                        "on-primary": "#fff0e8",
+                        "on-surface": "#312f25",
+                        "on-error-container": "#520c00",
+                        "tertiary-fixed-dim": "#8bed95",
+                        "error-dim": "#b92902",
+                        "on-secondary": "#eff2ff",
+                        "tertiary-fixed": "#99fba1",
+                        "surface-dim": "#dbd4c2",
+                        "on-surface-variant": "#5f5b51",
+                        "tertiary": "#006a27",
+                        "secondary-fixed": "#bcd2ff",
+                        "on-secondary-container": "#00468e",
+                        "on-tertiary": "#cfffcd",
+                        "secondary": "#005ab2",
+                        "surface-container-high": "#e9e2d1",
+                        "inverse-surface": "#100e07",
+                        "surface-container": "#efe8d8",
+                        "primary-fixed-dim": "#e87700",
+                        "tertiary-container": "#99fba1",
+                        "on-primary-fixed": "#010000",
+                        "surface-container-highest": "#e4dccb",
+                        "surface-variant": "#e4dccb",
+                        "outline": "#7b766b"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "1.5rem", "lg": "3rem", "xl": "4rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 48;
+        }
+        .organic-blob {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        .inner-glow {
+            box-shadow: inset 0 4px 8px rgba(255,255,255,0.4);
+        }
+        .chunky-shadow {
+            box-shadow: 0 12px 0px rgba(49, 47, 37, 0.1);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container leading-relaxed">
+<!-- Top Navigation Bar -->
+<nav class="bg-surface-container-low/90 backdrop-blur-xl rounded-full mt-6 mx-auto max-w-7xl sticky top-6 z-50 shadow-xl border-4 border-white/50 flex justify-between items-center w-[95%] px-10 py-5">
+<div class="flex items-center gap-12">
+<span class="text-3xl font-black text-primary italic font-headline tracking-tighter">PawPalace</span>
+<div class="hidden lg:flex gap-10">
+<a class="font-headline text-lg font-extrabold text-on-surface-variant hover:text-primary transition-all hover:scale-110" href="/catalogue" target="_top">Каталог</a>
+<a class="font-headline text-lg font-extrabold text-on-surface-variant hover:text-primary transition-all hover:scale-110" href="#">О нас</a>
+<a class="font-headline text-lg font-extrabold text-on-surface-variant hover:text-primary transition-all hover:scale-110" href="#">Контакты</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center bg-surface-container-highest px-6 py-3 rounded-full gap-3 border-2 border-outline-variant/30">
+<span class="material-symbols-outlined text-on-surface-variant text-2xl">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-lg w-48 font-bold placeholder:text-on-surface-variant/50" placeholder="Поиск..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-primary text-3xl hover:scale-125 transition-all">favorite</button>
+<button class="material-symbols-outlined text-primary text-3xl hover:scale-125 transition-all relative">
+                shopping_cart
+                <span class="absolute -top-3 -right-3 bg-primary-container text-on-primary-container text-xs w-6 h-6 rounded-full flex items-center justify-center font-black border-2 border-white">2</span>
+</button>
+<img alt="Профиль" class="w-14 h-14 rounded-full border-4 border-primary-container object-cover shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2chiIOOBYfvwmsGLeOUNbLRwJwxrGqwVzQZHYDabSV6svl1qHMwHLbfh9ZAKXswrS-tjBNuU48Yl9BTLBGoPRLWO_GPP50nCVqAtNSfHryH31IUnuqt9eZUs3n8MgmYydcJYPf3weJ7TLneEMQOc4DO4pcUa5YM8YAqnePq2NHGME4qPME1HVVXjYtHNfKA8DsPJ1ZNPXQVTUepgg2nNqbNGmoyHVMkdqLqiuMqFPMT3v9tXdwOj5sCWCSgABbyuzOq8XWXFAikNv"/>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative px-6 pt-20 pb-32 md:pt-32 md:pb-52 overflow-hidden">
+<div class="absolute inset-0 bg-primary-fixed/15 -z-10 rounded-b-[8rem]"></div>
+<!-- Oversized Floating Elements -->
+<div class="absolute top-20 left-[5%] text-primary-container opacity-20 animate-bounce transition-all duration-1000">
+<span class="material-symbols-outlined text-[12rem]" style="font-variation-settings: 'FILL' 1;">pets</span>
+</div>
+<div class="absolute bottom-20 right-[5%] text-secondary opacity-20 animate-pulse">
+<span class="material-symbols-outlined text-[14rem]">skeleton</span>
+</div>
+<div class="absolute top-60 right-1/3 text-tertiary opacity-10 rotate-45">
+<span class="material-symbols-outlined text-[10rem]">toys</span>
+</div>
+<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+<div class="space-y-12 relative z-10">
+<h1 class="text-7xl md:text-9xl font-headline font-black text-on-background leading-[0.9] tracking-tighter">
+                    Только позитивные <br/><span class="text-primary-container">хвостики!</span> 🐾
+                </h1>
+<p class="text-2xl md:text-3xl text-on-surface-variant font-bold max-w-xl leading-relaxed">
+                    Всё, что нужно вашему пушистому другу. Собрано с большой любовью и заботой!
+                </p>
+<div class="flex flex-wrap gap-6 pt-6">
+<button class="bg-primary text-on-primary px-14 py-8 rounded-full font-headline font-black text-2xl shadow-2xl hover:scale-105 active:scale-95 transition-all inner-glow flex items-center gap-4 chunky-shadow">
+                        В магазин
+                        <span class="material-symbols-outlined text-3xl">arrow_forward</span>
+</button>
+<button class="bg-white text-on-surface px-14 py-8 rounded-full font-headline font-black text-2xl border-4 border-surface-container-highest hover:bg-surface-container-low transition-all chunky-shadow">
+                        Скидки
+                    </button>
+</div>
+</div>
+<div class="relative group">
+<div class="organic-blob bg-secondary-container absolute inset-0 -rotate-12 scale-110 group-hover:rotate-0 transition-transform duration-1000 shadow-inner"></div>
+<img alt="Питомец" class="relative z-10 w-full aspect-square object-cover organic-blob shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] transition-transform group-hover:scale-105 duration-700 border-8 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEDepsi1AcTo5dRqU-sODuyLsO504l9fsylcOyjrt9_U_2Z6ROJUPU2Vzd1X2Oxf-Rz-zNvG9NBgm39IPyg9mVviU928cJY7yevBQGS8px9JLHNdT1dRZKLcExf_WfFhNT5nyx2oGm_uEiW3R5RDa1H_D11N_ZJ75rU0f1lL5Wvx6rJEGSVVVZS0rCAZCWKimHtmgDgD7YFlwoDLcSXbo2yVRZJV1cP0wAt7Yfo1mhJ5nPFIsGZ-wbSbv5GlV7rjVdKAbdcWyQ7kYU"/>
+</div>
+</div>
+</header>
+<!-- Category Grid - More chunky and playful -->
+<section class="max-w-7xl mx-auto px-6 -mt-24 relative z-20">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-10">
+<div class="bg-white p-12 rounded-[4rem] shadow-2xl hover:shadow-primary-container/20 transition-all hover:-translate-y-4 flex flex-col items-center text-center group cursor-pointer border-4 border-transparent hover:border-primary-container/30">
+<div class="w-32 h-32 bg-primary-fixed/20 rounded-full flex items-center justify-center mb-8 group-hover:scale-125 transition-transform duration-500">
+<span class="material-symbols-outlined text-primary text-6xl">pets</span>
+</div>
+<span class="font-headline font-black text-2xl">Собаки</span>
+</div>
+<div class="bg-white p-12 rounded-[4rem] shadow-2xl hover:shadow-secondary/20 transition-all hover:-translate-y-4 flex flex-col items-center text-center group cursor-pointer border-4 border-transparent hover:border-secondary/30">
+<div class="w-32 h-32 bg-secondary-fixed/20 rounded-full flex items-center justify-center mb-8 group-hover:scale-125 transition-transform duration-500">
+<span class="material-symbols-outlined text-secondary text-6xl">pets</span>
+</div>
+<span class="font-headline font-black text-2xl">Кошки</span>
+</div>
+<div class="bg-white p-12 rounded-[4rem] shadow-2xl hover:shadow-tertiary/20 transition-all hover:-translate-y-4 flex flex-col items-center text-center group cursor-pointer border-4 border-transparent hover:border-tertiary/30">
+<div class="w-32 h-32 bg-tertiary-fixed/20 rounded-full flex items-center justify-center mb-8 group-hover:scale-125 transition-transform duration-500">
+<span class="material-symbols-outlined text-tertiary text-6xl">cruelty_free</span>
+</div>
+<span class="font-headline font-black text-2xl">Грызуны</span>
+</div>
+<div class="bg-white p-12 rounded-[4rem] shadow-2xl hover:shadow-error/20 transition-all hover:-translate-y-4 flex flex-col items-center text-center group cursor-pointer border-4 border-transparent hover:border-error/30">
+<div class="w-32 h-32 bg-error-container/20 rounded-full flex items-center justify-center mb-8 group-hover:scale-125 transition-transform duration-500">
+<span class="material-symbols-outlined text-error text-6xl">set_meal</span>
+</div>
+<span class="font-headline font-black text-2xl">Рыбки</span>
+</div>
+</div>
+</section>
+<!-- Popular Products Slider - Bigger cards -->
+<section class="py-32 max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-8">
+<div class="text-center md:text-left">
+<h2 class="text-5xl md:text-7xl font-headline font-black text-on-background mb-6 leading-tight">Популярные <br/>лакомства и игрушки</h2>
+<p class="text-2xl text-on-surface-variant max-w-xl font-bold">Самые любимые товары нашего сообщества на этой неделе.</p>
+</div>
+<div class="flex gap-4">
+<button class="w-20 h-20 rounded-full bg-white border-4 border-outline/20 flex items-center justify-center hover:bg-surface-container transition-all chunky-shadow">
+<span class="material-symbols-outlined text-3xl">chevron_left</span>
+</button>
+<button class="w-20 h-20 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-primary-dim transition-all chunky-shadow">
+<span class="material-symbols-outlined text-3xl">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-12 overflow-x-auto pb-12 snap-x no-scrollbar">
+<!-- Product Card 1 -->
+<div class="min-w-[400px] md:min-w-[450px] snap-start group relative bg-[#FFF8EA] rounded-[4rem] p-10 hover:scale-105 transition-all duration-500 border-4 border-transparent hover:border-primary-container/20 chunky-shadow">
+<div class="relative overflow-hidden rounded-[2.5rem] mb-8 aspect-square">
+<img alt="Игрушки" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCniNWQV_b0tZ88R2KAsox6J2VAiF7PDFNAfXfh-kxZDuIc8qUefLDI6PTFdWsBzsfogpezjDLcCB9PaCVK4gEs4i-EN7qIMUUQEtZ0t3jicyBqXpr7PuwYLZKWtKCbpCyhIZQcAZzx8KzAz-wHrQ3_ut_6WmrTLGaNkgkB6rBpDCzO_2ePVbM6EjxIM7frRylpVC6HbiTmtLMHjSvUKhsnz13HgSil-JK-yWa7p-qO8Zb8V6lD2OCgdPwXqwsVWSKyd0zQtfeMSvBl"/>
+<div class="absolute top-6 right-6 bg-primary-container text-on-primary-container font-black px-6 py-3 rounded-full text-xl shadow-lg border-2 border-white">
+                        2499 ₽
+                    </div>
+</div>
+<div class="space-y-4">
+<div class="flex gap-1 text-primary-fixed">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<h3 class="font-headline font-black text-3xl">Набор канатов</h3>
+<p class="text-xl text-on-surface-variant font-bold">Прочный и экологичный набор для активных псов.</p>
+<button class="w-full bg-primary text-on-primary py-6 rounded-3xl font-black text-xl mt-4 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        В корзину
+                    </button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="min-w-[400px] md:min-w-[450px] snap-start group relative bg-[#FFF8EA] rounded-[4rem] p-10 hover:scale-105 transition-all duration-500 border-4 border-transparent hover:border-primary-container/20 chunky-shadow">
+<div class="relative overflow-hidden rounded-[2.5rem] mb-8 aspect-square">
+<img alt="Дразнилка" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8CklpwDV0SbTPzn_ohjE8w9qEq5kKfEsDh6spf74HZvMiWnA62sxfBk7dD2HsS8nL-cDgBJCLCJAzq9kZx-dWDCQQOMRmrl7wIZI-OOfZKVj5PRcMmx6AulFevNM4enUv06hOB6lzX5qMI5oNYLfTtlbCYXfpUZyDzIURvIhM1KC7T4DdpQXjlnXc7egjjvQlRxliKclOcn4yIF1763VTaW6e1vzClIdCjlJfc8rt2PTcwO2zzjHbMrIPLiYq-tbQ-CC0i2EptulA"/>
+<div class="absolute top-6 right-6 bg-primary-container text-on-primary-container font-black px-6 py-3 rounded-full text-xl shadow-lg border-2 border-white">
+                        1950 ₽
+                    </div>
+</div>
+<div class="space-y-4">
+<div class="flex gap-1 text-primary-fixed">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<h3 class="font-headline font-black text-3xl">Умная дразнилка</h3>
+<p class="text-xl text-on-surface-variant font-bold">Автоматическое веселье для вашей кошки.</p>
+<button class="w-full bg-primary text-on-primary py-6 rounded-3xl font-black text-xl mt-4 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        В корзину
+                    </button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="min-w-[400px] md:min-w-[450px] snap-start group relative bg-[#FFF8EA] rounded-[4rem] p-10 hover:scale-105 transition-all duration-500 border-4 border-transparent hover:border-primary-container/20 chunky-shadow">
+<div class="relative overflow-hidden rounded-[2.5rem] mb-8 aspect-square">
+<img alt="Миска" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3t42WwjSFf2ZPdsgo2OjKB59vD9351PSdOr7F2CLfvE9VWZtiwozy-4bWhbo2MZ_N45Z-xIEFB5WInUNte5rnmtLbadCSd2_FrLVyoo2k8WaRr9M-Ik7CFxwh3Wn77hTSJg4qKMy6gSiyMJCUOqBFLL8jp7vEDB3y9PAMSyjQ_1zTuMDF59rK5Pbmzuh_YTeHLVO1i_SnB5Kps39cdeeG7ehV-XbfUixa-042fi1vZcF4GWzIkhRUZPaeKKw0rhO1UL_N2YfcsQSM"/>
+<div class="absolute top-6 right-6 bg-primary-container text-on-primary-container font-black px-6 py-3 rounded-full text-xl shadow-lg border-2 border-white">
+                        3500 ₽
+                    </div>
+</div>
+<div class="space-y-4">
+<div class="flex gap-1 text-primary-fixed">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xl">star</span>
+</div>
+<h3 class="font-headline font-black text-3xl">Керамическая миска</h3>
+<p class="text-xl text-on-surface-variant font-bold">Эргономичный дизайн для защиты шеи питомца.</p>
+<button class="w-full bg-primary text-on-primary py-6 rounded-3xl font-black text-xl mt-4 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        В корзину
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Special Offers - Oversized Banner -->
+<section class="max-w-7xl mx-auto px-6 my-24">
+<div class="bg-secondary rounded-[5rem] p-16 md:p-32 relative overflow-hidden flex flex-col md:flex-row items-center gap-16 border-8 border-white/20 shadow-2xl">
+<div class="absolute top-0 right-0 w-[40rem] h-[40rem] bg-secondary-container/20 rounded-full translate-x-1/2 -translate-y-1/2"></div>
+<div class="flex-1 relative z-10 text-on-secondary">
+<span class="inline-block bg-secondary-container text-on-secondary-container px-8 py-3 rounded-full text-lg font-black mb-10 shadow-lg">Ограниченное предложение!</span>
+<h2 class="text-6xl md:text-8xl font-headline font-black mb-8 leading-tight">Счастливые часы:<br/>Вкусняшки! 🍖</h2>
+<p class="text-3xl font-bold opacity-95 mb-14 max-w-xl leading-relaxed">Скидка 40% на все лакомства. Освежающие цены для самых радостных хвостиков.</p>
+<div class="flex gap-6">
+<div class="flex flex-col items-center bg-white/20 backdrop-blur-xl rounded-[2.5rem] p-8 min-w-[120px] border-2 border-white/30">
+<span class="text-5xl font-black">02</span>
+<span class="text-sm uppercase font-black tracking-widest mt-2 opacity-80">Час</span>
+</div>
+<div class="flex flex-col items-center bg-white/20 backdrop-blur-xl rounded-[2.5rem] p-8 min-w-[120px] border-2 border-white/30">
+<span class="text-5xl font-black">45</span>
+<span class="text-sm uppercase font-black tracking-widest mt-2 opacity-80">Мин</span>
+</div>
+<div class="flex flex-col items-center bg-white/20 backdrop-blur-xl rounded-[2.5rem] p-8 min-w-[120px] border-2 border-white/30">
+<span class="text-5xl font-black">12</span>
+<span class="text-sm uppercase font-black tracking-widest mt-2 opacity-80">Сек</span>
+</div>
+</div>
+</div>
+<div class="relative z-10 w-full md:w-auto">
+<button class="bg-primary-container text-on-primary-container px-16 py-10 rounded-full font-headline font-black text-4xl shadow-[0_20px_0px_#904800] hover:translate-y-1 hover:shadow-[0_15px_0px_#904800] active:translate-y-4 active:shadow-none transition-all w-full md:w-[350px]">
+                    Забрать!
+                </button>
+</div>
+</div>
+</section>
+<!-- Benefits - More whitespace and larger icons -->
+<section class="py-32 max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-3 gap-20">
+<div class="group text-center md:text-left">
+<div class="w-32 h-32 bg-tertiary-fixed text-on-tertiary-fixed rounded-[2.5rem] flex items-center justify-center mb-10 group-hover:rotate-12 transition-transform duration-500 shadow-xl border-4 border-white mx-auto md:mx-0">
+<span class="material-symbols-outlined text-6xl">local_shipping</span>
+</div>
+<h3 class="text-3xl font-headline font-black mb-6">Быстрая доставка</h3>
+<p class="text-xl text-on-surface-variant leading-relaxed font-bold">Оперативная доставка по всей стране, чтобы вашему питомцу не пришлось долго ждать.</p>
+</div>
+<div class="group text-center md:text-left">
+<div class="w-32 h-32 bg-tertiary-fixed text-on-tertiary-fixed rounded-[2.5rem] flex items-center justify-center mb-10 group-hover:rotate-12 transition-transform duration-500 shadow-xl border-4 border-white mx-auto md:mx-0">
+<span class="material-symbols-outlined text-6xl">support_agent</span>
+</div>
+<h3 class="text-3xl font-headline font-black mb-6">Поддержка экспертов</h3>
+<p class="text-xl text-on-surface-variant leading-relaxed font-bold">Наша команда ветеринаров поможет выбрать самое лучшее для вашего друга.</p>
+</div>
+<div class="group text-center md:text-left">
+<div class="w-32 h-32 bg-tertiary-fixed text-on-tertiary-fixed rounded-[2.5rem] flex items-center justify-center mb-10 group-hover:rotate-12 transition-transform duration-500 shadow-xl border-4 border-white mx-auto md:mx-0">
+<span class="material-symbols-outlined text-6xl">volunteer_activism</span>
+</div>
+<h3 class="text-3xl font-headline font-black mb-6">Сделано с любовью</h3>
+<p class="text-xl text-on-surface-variant leading-relaxed font-bold">Мы упаковываем каждый заказ как настоящий подарок для вашего любимца.</p>
+</div>
+</div>
+</section>
+<!-- Reviews Section - Oversized Bubbles -->
+<section class="py-32 bg-surface-container-low rounded-[8rem] mx-6">
+<div class="max-w-6xl mx-auto px-6 text-center">
+<h2 class="text-5xl md:text-7xl font-headline font-black mb-24 leading-tight">Счастливые истории <br/>наших друзей</h2>
+<div class="grid lg:grid-cols-2 gap-12 text-left">
+<div class="bg-white p-14 rounded-[5rem] relative chunky-shadow border-4 border-white">
+<div class="absolute -top-10 -left-6 text-primary/30">
+<span class="material-symbols-outlined text-9xl">format_quote</span>
+</div>
+<p class="text-2xl font-bold italic text-on-surface mb-10 relative z-10 leading-relaxed">"Качество игрушек здесь просто потрясающее! Макс обычно уничтожает всё за 5 минут, но этот канат всё еще цел!"</p>
+<div class="flex items-center gap-6">
+<img alt="Отзыв" class="w-20 h-20 rounded-full object-cover border-4 border-primary-container shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNDVVcReEcW6VFkd499_62e2KssEnRvr1gkSj1bzHYHQyPwGURotefMUSwaGQ_K5Yfus3dab-KwY8A6uktFMjglj5occHTnHrqmEWDPe9GK33NAf-tQhidq3dS7BZDg377WOMbFhVFCZxMb24OHUWb8Q6b161CNkRKTn-p0eoW61WbpMLltZe6HBni8_tWA1BvIt3f_G6ywLedHhhYSCk76x6W-LVXe7RLMk0Eg3sIG3ziS5oRFN6qlZn-TNRVgmEKyxzPZRK3Pa5k"/>
+<div>
+<p class="text-2xl font-black">Сара Дженкинс</p>
+<p class="text-lg text-on-surface-variant font-bold">Владелица Макса (Золотистый ретривер)</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-14 rounded-[5rem] relative chunky-shadow border-4 border-white mt-12 lg:mt-0">
+<div class="absolute -top-10 -left-6 text-primary/30">
+<span class="material-symbols-outlined text-9xl">format_quote</span>
+</div>
+<p class="text-2xl font-bold italic text-on-surface mb-10 relative z-10 leading-relaxed">"Наконец-то магазин, который заботится о питании. Выбор лакомств потрясающий, Луна в полном восторге!"</p>
+<div class="flex items-center gap-6">
+<img alt="Отзыв" class="w-20 h-20 rounded-full object-cover border-4 border-primary-container shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAlW6zMPaMKPUXJRpHK3I-HybfQCZD1OTUiHV2lEq19-Sqi6awiyYU3Sq6Yo2fAzIVFTPbqbXZAKDHHKK3d6JpH_qew_tXCj7C9GvM5-mbkvb4EGHzBB0QoD4GRsFMgZVCpwhbWpxW9eMYA95SWa7Y5QCBwB5AXpSCsEmAGyPgC9N29wzDP1iZwBDXqLgHtMeCAq58700ByHZQnohucBYKuuKPsNhK3OMMtXbc54ZgRk6lyDeLS3pyDF_PIUdczZ71sk9O8SNN4DNq"/>
+<div>
+<p class="text-2xl font-black">Дэвид Чен</p>
+<p class="text-lg text-on-surface-variant font-bold">Владелец Луны (Кошка породы рэгдолл)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter - Oversized and Chunky -->
+<section class="max-w-7xl mx-auto px-6 py-32">
+<div class="bg-error-container text-on-error rounded-[6rem] p-16 md:p-32 relative overflow-hidden border-8 border-white/20 shadow-2xl">
+<div class="organic-blob absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-primary-container/30 -rotate-12"></div>
+<div class="max-w-3xl relative z-10">
+<h2 class="text-5xl md:text-8xl font-headline font-black mb-10 tracking-tight leading-none">Присоединяйтесь к стае! 🐶</h2>
+<p class="text-2xl md:text-3xl font-bold opacity-95 mb-16 leading-relaxed">Получайте советы экспертов, эксклюзивные скидки и узнавайте первыми о наших новинках.</p>
+<form class="flex flex-col sm:flex-row gap-6">
+<input class="flex-1 bg-white text-on-surface px-10 py-8 rounded-full border-none focus:ring-8 focus:ring-primary-container/30 text-2xl font-bold placeholder:text-on-surface/40 chunky-shadow" placeholder="Email вашего друга..." type="email"/>
+<button class="bg-primary text-on-primary px-14 py-8 rounded-full font-headline font-black text-2xl hover:scale-105 active:scale-95 transition-all chunky-shadow whitespace-nowrap" type="submit">
+                        Подписаться
+                    </button>
+</form>
+<p class="text-lg font-bold opacity-80 mt-10">Без спама, только самые лучшие новости!</p>
+</div>
+</div>
+</section>
+<!-- Footer - Bigger and bolder -->
+<footer class="bg-surface-container-low rounded-t-[6rem] w-full mt-20 flex flex-col lg:flex-row justify-between items-center px-16 py-24 gap-16 border-t-8 border-white">
+<div class="flex flex-col gap-6 items-center lg:items-start">
+<span class="text-5xl font-black text-primary italic font-headline">PawPalace</span>
+<p class="font-body text-xl font-bold leading-relaxed text-on-surface-variant text-center lg:text-left max-w-sm">
+                © 2024 PawPalace. Сделано с любовью для всех пушистых друзей. Мы помогаем вам жить лучше вместе! 🐾
+            </p>
+</div>
+<div class="flex flex-wrap justify-center gap-12">
+<a class="text-xl font-black text-on-surface-variant hover:text-primary transition-all hover:scale-110" href="#">Приватность</a>
+<a class="text-xl font-black text-on-surface-variant hover:text-primary transition-all hover:scale-110" href="#">Доставка</a>
+<a class="text-xl font-black text-on-surface-variant hover:text-primary transition-all hover:scale-110" href="#">Возврат</a>
+<a class="text-xl font-black text-on-surface-variant hover:text-primary transition-all hover:scale-110" href="#">FAQ</a>
+</div>
+<div class="flex gap-8">
+<button class="w-20 h-20 rounded-full bg-white flex items-center justify-center hover:scale-125 transition-all text-primary chunky-shadow border-4 border-surface-container-highest">
+<span class="material-symbols-outlined text-4xl">share</span>
+</button>
+<button class="w-20 h-20 rounded-full bg-white flex items-center justify-center hover:scale-125 transition-all text-primary chunky-shadow border-4 border-surface-container-highest">
+<span class="material-symbols-outlined text-4xl">chat</span>
+</button>
+</div>
+</footer>
+<!-- FAB - Oversized -->
+<button class="fixed bottom-12 right-12 w-24 h-24 bg-primary-container text-on-primary-container rounded-full shadow-[0_15px_30px_rgba(252,130,0,0.4)] flex items-center justify-center z-50 hover:scale-110 active:scale-90 transition-all animate-bounce border-4 border-white">
+<span class="material-symbols-outlined text-5xl">chat_bubble</span>
+</button>
+</body></html>

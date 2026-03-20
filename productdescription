@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Лакомства для щенков Гурман - PawPalace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#b02500",
+              "on-background": "#312f25",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f7f0e1",
+              "primary": "#904800",
+              "background": "#fdf6e8",
+              "surface-tint": "#904800",
+              "on-tertiary-fixed-variant": "#006c28",
+              "tertiary-dim": "#005d21",
+              "secondary-fixed-dim": "#a5c5ff",
+              "inverse-on-surface": "#a29c90",
+              "primary-container": "#fc8200",
+              "outline-variant": "#b2ada0",
+              "inverse-primary": "#fc8200",
+              "on-tertiary-fixed": "#004c1a",
+              "error-container": "#f95630",
+              "on-primary-fixed-variant": "#4c2300",
+              "primary-fixed": "#fc8200",
+              "surface-bright": "#fdf6e8",
+              "surface": "#fdf6e8",
+              "on-tertiary-container": "#006123",
+              "on-secondary-fixed": "#00336b",
+              "secondary-container": "#bcd2ff",
+              "on-error": "#ffefec",
+              "on-secondary-fixed-variant": "#004f9e",
+              "primary-dim": "#7e3e00",
+              "secondary-dim": "#004e9d",
+              "on-primary-container": "#3f1c00",
+              "on-primary": "#fff0e8",
+              "on-surface": "#312f25",
+              "on-error-container": "#520c00",
+              "tertiary-fixed-dim": "#8bed95",
+              "error-dim": "#b92902",
+              "on-secondary": "#eff2ff",
+              "tertiary-fixed": "#99fba1",
+              "surface-dim": "#dbd4c2",
+              "on-surface-variant": "#5f5b51",
+              "tertiary": "#006a27",
+              "secondary-fixed": "#bcd2ff",
+              "on-secondary-container": "#00468e",
+              "on-tertiary": "#cfffcd",
+              "secondary": "#005ab2",
+              "surface-container-high": "#e9e2d1",
+              "inverse-surface": "#100e07",
+              "surface-container": "#efe8d8",
+              "primary-fixed-dim": "#e87700",
+              "tertiary-container": "#99fba1",
+              "on-primary-fixed": "#010000",
+              "surface-container-highest": "#e4dccb",
+              "surface-variant": "#e4dccb",
+              "outline": "#7b766b"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1.5rem", "lg": "2.5rem", "xl": "4rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .bone-rating {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- Top Navigation Bar -->
+<header class="bg-surface/80 backdrop-blur-md rounded-full mt-6 mx-auto max-w-7xl sticky top-6 z-50 shadow-[0px_10px_40px_rgba(49,47,37,0.08)] flex justify-between items-center w-[calc(100%-2rem)] px-10 py-4">
+<div class="flex items-center gap-2">
+<span class="text-3xl font-black text-primary italic font-headline tracking-tighter">PawPalace</span>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="font-headline text-base font-bold tracking-tight text-primary border-b-2 border-primary pb-1" href="#">Каталог</a>
+<a class="font-headline text-base font-bold tracking-tight text-on-surface-variant hover:text-primary transition-colors" href="#">О нас</a>
+<a class="font-headline text-base font-bold tracking-tight text-on-surface-variant hover:text-primary transition-colors" href="#">Контакты</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="p-2.5 rounded-full hover:bg-surface-container-highest transition-all duration-300">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="favorite">favorite</span>
+</button>
+<button class="p-2.5 rounded-full hover:bg-surface-container-highest transition-all duration-300 relative">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute top-1 right-1 bg-primary-container text-on-primary-container text-[11px] font-bold px-2 py-0.5 rounded-full">3</span>
+</button>
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20 p-0.5">
+<img class="w-full h-full object-cover rounded-full" data-alt="Аватар профиля пользователя" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAz2XV0t3hbeveBntY-d8-1eo3wsI64MQWBnBNuiz8B57dVGp1Scs5BQ9UuEV-esRUqDbRHap6w4CengO9UWIzvMnaA_3rF-7Hj2IdKnYdrwr9AAvLpeg0jyQvXEpnVkg2lw7FKFxSmJ3YzgosTKudgMvaetX_xAeSCnowSlpljckIzWD91MJ2gJzhbjZZLJDr-2YWpJgsGkVvixy0CSy74TvwgC26EP_wMikH_6kj5CHRwf8aUNe4yrx3YfAWksS3VQIS45wEH71vg"/>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 lg:px-8 mt-16 mb-32">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-3 text-sm text-on-surface-variant mb-12 font-medium bg-surface-container-low/30 w-fit px-6 py-2 rounded-full">
+<a class="hover:text-primary transition-colors" href="#">Главная</a>
+<span class="material-symbols-outlined text-[10px]" data-icon="chevron_right">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Каталог</a>
+<span class="material-symbols-outlined text-[10px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-on-surface font-bold">Лакомства "Гурман"</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<!-- Product Gallery (7 Columns) -->
+<div class="lg:col-span-7 flex flex-col gap-8">
+<!-- Large Main Image -->
+<div class="bg-surface-container-lowest rounded-3xl overflow-hidden shadow-[0px_30px_60px_rgba(49,47,37,0.08)] aspect-square lg:aspect-[5/4] flex items-center justify-center relative group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Изысканные лакомства для щенков в премиальной миске" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKQD_jyNOlOF5kn-Qn8Z4WRvqH9Znn4ZSZcQKcM3SrS01jxRyD3sjBf1ulRttKcB17HzweTsDzNKIzcNOq9kzZfTG3H-Ncy8OawrHDmU3Us0MgCg_pcI4XwbwjnDK-2cUE-24pn_2zC6qlI2zwTtpXJf2lmndNNm8Ft-_QpuUUjp5ZpEYx84xdozgk1iZ4U-EFEGkEEpVlp13umV_Hj-8RUzVuo1l1tMG_kiW2reBO4Z2h42vl0j6SzVe1P3Qn-zOOQXkUlxUkFD0U"/>
+<span class="absolute top-8 left-8 bg-primary-fixed text-on-primary-fixed text-sm font-extrabold px-6 py-3 rounded-full tracking-widest uppercase shadow-lg">Хит продаж</span>
+</div>
+<!-- Thumbnails -->
+<div class="flex gap-6 overflow-x-auto pb-4 snap-x">
+<button class="flex-shrink-0 w-32 h-32 rounded-2xl bg-surface-container-low border-4 border-primary-container p-1 hover:scale-105 transition-transform duration-300 snap-start">
+<img class="w-full h-full object-cover rounded-xl" data-alt="Основной вид товара" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACHdyLv3K5odwOT9q5Pv912IqWV3DTwsL_ZIO_dh0jZmdYoxNbic9igmCKQ1XScXWAH8qpAQFzPmKDj4F_0Z7A4sYsR0Qlvl4oXwAOAUNNAHmXmF_3ETKI6BqVCAtEeuHnQQk9EHyDqXg6O4fdXrY16WlFjPGfPMhGP10ynVx8XtstaqCIYQ1AGsgeqrKUct74bcOPKQWYsp5Ai884uYRoBxFWu13faeKnanuXvE6b52tBa4EZGygY3tSAiCFiVvkV52KRiLQg7E8o"/>
+</button>
+<button class="flex-shrink-0 w-32 h-32 rounded-2xl bg-surface-container-low border-2 border-transparent p-1 hover:scale-105 transition-transform duration-300 snap-start">
+<img class="w-full h-full object-cover rounded-xl" data-alt="Вид ингредиентов лакомства" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGfOaLacdr6KldakBL2AfMM91-B1u9ShHSdseqwyxUNhoNlX1M4NwWWds4kq9Ij2n6jr8Z5VrvmxEJaEOOhM7GEV-zgJ0MM17JFT-1jZ_65H5j_7kEhbNl1NalYZpPDP57TQKcmes9GpaLXboJwyxnO7Xy72mJTYVFwZLBckKkpaVKddJCkFut3f_b_6KMZSQ5WFc0-yNwC8PTJUt7Cjpz2Y2pLkhc4nSqCCpMV2W-WK7-O7UaWVlL9VhcRxu52Mtqe-sJwtB2846S"/>
+</button>
+<button class="flex-shrink-0 w-32 h-32 rounded-2xl bg-surface-container-low border-2 border-transparent p-1 hover:scale-105 transition-transform duration-300 snap-start">
+<img class="w-full h-full object-cover rounded-xl" data-alt="Щенок наслаждается лакомством" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApcQkvJeVE_MpoOI5v2W8Lavv9zi9K80ahLwshwISrHQnjPY2I3dbftc1bEF01SnvjP8-XaqA30BnZ8eUM65yzsbCEPuWy90Hv4nwjGqVLo-8sWcBnv1i9gDZP-4CM80T4IIUNDXhJ3Uln6jOqW-AlRIvSrM2T5Mp4_w-iKxQN6JU6v9xzvMLxtGRbXrodRJm3USVVouPGjWxphl-PkZ_4eg8IXm9YThcyWGMGnpoUlK7y8hKpIB0Y9DXwyzlKCafHgoSGQu6oN0tl"/>
+</button>
+<button class="flex-shrink-0 w-32 h-32 rounded-2xl bg-surface-container-low border-2 border-transparent p-1 hover:scale-105 transition-transform duration-300 snap-start">
+<img class="w-full h-full object-cover rounded-xl" data-alt="Детали упаковки" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe67tYE7Mn4rjZ_l2LS-mbDat_21g7Tpr9TLCtQrwotuW0KYqmIop0z4WKKnKtsJCUPOMhJR9-bcywtJcBe6MfxKTLBzMWpqpLjLF4HsTaylnCkp-poXpDmvHcUU6OBD3yGLdoE5ecHUHSk5M0h6zONBo0GyIk8lAX0dpFai0kWjDcoRPIjzyPvCpW3dkxXbEXlpVT8rN4lJDwj6ZngQhCexPstDFQ0Ipk2IyuX6lz2rXhNFV-idSqvJWXUoX93-V9iYBKabutvfZi"/>
+</button>
+</div>
+</div>
+<!-- Info Column (5 Columns) -->
+<div class="lg:col-span-5 flex flex-col gap-10">
+<div>
+<h1 class="font-headline text-5xl font-extrabold text-on-surface leading-tight mb-4 tracking-tight">Лакомства для щенков "Гурман" (12 шт)</h1>
+<div class="flex items-center gap-6 mb-6">
+<div class="flex text-primary-container scale-125 origin-left">
+<span class="material-symbols-outlined bone-rating" data-icon="pets">pets</span>
+<span class="material-symbols-outlined bone-rating" data-icon="pets">pets</span>
+<span class="material-symbols-outlined bone-rating" data-icon="pets">pets</span>
+<span class="material-symbols-outlined bone-rating" data-icon="pets">pets</span>
+<span class="material-symbols-outlined" data-icon="pets">pets</span>
+</div>
+<span class="text-on-surface-variant font-bold text-base bg-surface-container px-3 py-1 rounded-full">(124 довольных хвостика)</span>
+</div>
+<p class="text-5xl font-black text-primary-container font-headline tracking-tighter">$24.99</p>
+</div>
+<p class="text-xl text-on-surface-variant leading-relaxed font-semibold italic border-l-4 border-primary-container/30 pl-6">
+                    Испечено с любовью и заботой! 🦴 Наши фирменные лакомства содержат органические ингредиенты для здоровья вашего питомца и блестящей шерсти.
+                </p>
+<!-- Variant Selectors -->
+<div class="space-y-8 bg-surface-container/30 p-8 rounded-3xl">
+<div>
+<label class="block text-sm font-black text-on-surface mb-4 uppercase tracking-widest">Вкус продукта</label>
+<div class="flex flex-wrap gap-3">
+<button class="px-8 py-3.5 rounded-full bg-primary text-on-primary font-bold text-base shadow-lg transition-all ring-4 ring-primary/20">Арахисовая паста</button>
+<button class="px-8 py-3.5 rounded-full bg-surface-container-high text-on-surface-variant font-bold text-base hover:bg-surface-container-highest transition-all">Курица и яблоко</button>
+<button class="px-8 py-3.5 rounded-full bg-surface-container-high text-on-surface-variant font-bold text-base hover:bg-surface-container-highest transition-all">Тыквенный пряник</button>
+</div>
+</div>
+<div>
+<label class="block text-sm font-black text-on-surface mb-4 uppercase tracking-widest">Размер упаковки</label>
+<div class="flex flex-wrap gap-3">
+<button class="px-8 py-3.5 rounded-full bg-surface-container-high text-on-surface-variant font-bold text-base hover:bg-surface-container-highest transition-all">Маленькая (170г)</button>
+<button class="px-8 py-3.5 rounded-full bg-primary text-on-primary font-bold text-base shadow-lg transition-all ring-4 ring-primary/20">Стандартная (340г)</button>
+<button class="px-8 py-3.5 rounded-full bg-surface-container-high text-on-surface-variant font-bold text-base hover:bg-surface-container-highest transition-all">Большая (1кг)</button>
+</div>
+</div>
+</div>
+<!-- Cart Actions -->
+<div class="flex flex-col sm:flex-row items-stretch gap-6 pt-6">
+<button class="flex-[2] bg-gradient-to-br from-primary to-primary-container text-on-primary text-xl font-black py-8 px-10 rounded-full shadow-2xl hover:shadow-primary/30 hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-4">
+<span class="material-symbols-outlined text-3xl" data-icon="shopping_basket">shopping_basket</span>
+                        ДОБАВИТЬ В КОРЗИНУ
+                    </button>
+<button class="flex-shrink-0 w-24 h-24 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center hover:scale-110 active:scale-95 transition-all shadow-xl group border-4 border-background">
+<span class="material-symbols-outlined text-4xl transition-all group-hover:scale-125" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<!-- Expandable Sections -->
+<div class="space-y-4 mt-4">
+<div class="group border-b-2 border-outline-variant/10">
+<button class="w-full flex justify-between items-center py-6 text-left focus:outline-none">
+<span class="font-headline font-black text-xl text-on-surface">Состав</span>
+<span class="material-symbols-outlined text-primary group-hover:rotate-180 transition-transform duration-500 scale-125" data-icon="expand_more">expand_more</span>
+</button>
+<div class="overflow-hidden max-h-0 group-hover:max-h-60 transition-all duration-500 ease-in-out">
+<p class="pb-8 text-on-surface-variant leading-relaxed text-lg font-medium">
+                                Органическая овсяная мука, натуральная арахисовая паста, свежие бананы, мед и витамин Е. Без искусственных консервантов и зерновых наполнителей.
+                            </p>
+</div>
+</div>
+<div class="group border-b-2 border-outline-variant/10">
+<button class="w-full flex justify-between items-center py-6 text-left focus:outline-none">
+<span class="font-headline font-black text-xl text-on-surface">Рекомендации по кормлению</span>
+<span class="material-symbols-outlined text-primary group-hover:rotate-180 transition-transform duration-500 scale-125" data-icon="expand_more">expand_more</span>
+</button>
+<div class="overflow-hidden max-h-0 group-hover:max-h-60 transition-all duration-500 ease-in-out">
+<p class="pb-8 text-on-surface-variant leading-relaxed text-lg font-medium">
+                                Маленькие щенки (2-7 кг): 1-2 лакомства в день. Средние щенки (7-15 кг): 2-4 лакомства в день. Всегда обеспечивайте наличие свежей воды.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Related Products Section -->
+<section class="mt-40">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+<div>
+<h2 class="font-headline text-4xl font-extrabold text-on-surface mb-3 tracking-tight">Другие любимчики хвостиков</h2>
+<p class="text-on-surface-variant text-xl font-semibold">Популярные лакомства и игрушки для вашего лучшего друга</p>
+</div>
+<a class="text-primary font-black text-lg flex items-center gap-3 hover:translate-x-2 transition-transform bg-primary/10 px-8 py-4 rounded-full" href="#">
+                    Весь каталог <span class="material-symbols-outlined font-bold" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+<!-- Related Card 1 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-low rounded-3xl overflow-hidden mb-6 relative aspect-square shadow-md group-hover:shadow-2xl transition-all duration-500">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Плюшевая игрушка-пищалка" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnk3MojuJZXM90Qa3u8i3EdZnpfNZ8eSuZWBxZehk3VJExSDYWC5SuNsGYiYl4iEpr-Jj1B4uiO-Ytj2Z_TepyCcAJCCmH1wRVBFfpZA_fqTrz93K4kr7qIvxAPj4ebidxzNS3Z5v7tmGXOAJcUQ_FqDGw18AJFGOS0bdkaBQ9k8AZqeTdwJQGpU_CHh2g_dqP0YLZFjCVRb4NeBufPKluhHd0sC3wb8fmev1XId8aB2t4PTzhPjcP_MS-ZWBm3MQEYm1tWcFOgDbF"/>
+<button class="absolute top-6 right-6 bg-white/90 backdrop-blur-md p-3 rounded-full text-on-surface opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+<span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+</button>
+</div>
+<h3 class="font-headline font-extrabold text-xl text-on-surface group-hover:text-primary transition-colors mb-2">Плюшевый жираф-пищалка</h3>
+<p class="text-primary-container font-black text-2xl tracking-tighter">$12.50</p>
+</div>
+<!-- Related Card 2 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-low rounded-3xl overflow-hidden mb-6 relative aspect-square shadow-md group-hover:shadow-2xl transition-all duration-500">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Органический шампунь для собак" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4Vz945NboaflpuM3SFGLUtQppiVpKNV-ZFeF4CtAWI9uuEZW2v1uTwrwCXb1EaEgaNcLliImz9QEyNt7qWSi1_7B6wbrMoQz2uBIgnvF3Q_oy0UIEPAHzkTjiNUB70AmeRW0HOVRHyRwan2qnUxI_EYEv9haZ5w52YU3xs78qNHHmHulCfknb6GMjOrGQ9xMXmtf3ADUCO-fDC79QVJ494YcPVthtAj3nDomsO0MafR4vIZ2xj9VPuJnwLSRilsbV4DH0HOs2ki2h"/>
+<button class="absolute top-6 right-6 bg-white/90 backdrop-blur-md p-3 rounded-full text-on-surface opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+<span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+</button>
+</div>
+<h3 class="font-headline font-extrabold text-xl text-on-surface group-hover:text-primary transition-colors mb-2">Лавандовое спа-средство</h3>
+<p class="text-primary-container font-black text-2xl tracking-tighter">$18.99</p>
+</div>
+<!-- Related Card 3 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-low rounded-3xl overflow-hidden mb-6 relative aspect-square shadow-md group-hover:shadow-2xl transition-all duration-500">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Стильный плетеный ошейник" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp4H0qBFvZgVZKS2w7jr4Bwif6TpJx4onN2AVNRidKv6GVALAVAaR2YMJ5-YKXJn4a0ev3kDQQnz9nqV1GfUUeXI9CP5yPYJ6NQMoYjLpOXdjn1dpeeD8L8FmkewytllPSv4YMtpnusGsJsC9CMwAHRQz-y7OkQh51oisSZbs9-hQITKq3SOEhvdKtntulw1XJFpnCW-4I1c_QlByIgwUNh13iTvDPl3r6pnUPe4jWW3c7TY79hmhvIPWXzXcxT6nNlqk3I6Q0N9fw"/>
+<button class="absolute top-6 right-6 bg-white/90 backdrop-blur-md p-3 rounded-full text-on-surface opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+<span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+</button>
+</div>
+<h3 class="font-headline font-extrabold text-xl text-on-surface group-hover:text-primary transition-colors mb-2">Плетеный ошейник "Сафари"</h3>
+<p class="text-primary-container font-black text-2xl tracking-tighter">$22.00</p>
+</div>
+<!-- Related Card 4 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-low rounded-3xl overflow-hidden mb-6 relative aspect-square shadow-md group-hover:shadow-2xl transition-all duration-500">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Успокаивающая лежанка для питомца" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMLhLWcPL13IHL7lcDrsyg7_bE7Fd8-7x4DlODbF6RCjTj36iWj_KLo72U4i9OW9jT6SU9nsyvMXuBXzfAt8SP2J-rZ2gzCGzjZIUU9TAbO_8u4bNiqFtprMRgjGm5cQjEWMwBwS4IT81HNIfG-urMrg-tbuHuk5-lvOEaEfK5QBP3iAyH_bwUeYFxK0x0ARRVDMxhPTC34C-rtPPAfQpmO3ydar7YY7NJPRmQ1VJlJ8ZbQTmtGH3i1C355ZqwkLYdFMTV38voubla"/>
+<button class="absolute top-6 right-6 bg-white/90 backdrop-blur-md p-3 rounded-full text-on-surface opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+<span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+</button>
+</div>
+<h3 class="font-headline font-extrabold text-xl text-on-surface group-hover:text-primary transition-colors mb-2">Мягкая лежанка-облако</h3>
+<p class="text-primary-container font-black text-2xl tracking-tighter">$45.00</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container rounded-t-[5rem] w-full mt-24 flex flex-col md:flex-row justify-between items-start md:items-center px-16 py-24 gap-12">
+<div class="flex flex-col gap-6">
+<span class="text-4xl font-black text-primary italic font-headline tracking-tighter">PawPalace</span>
+<p class="font-body text-lg font-medium leading-relaxed text-on-surface-variant max-w-md">
+                © 2024 PawPalace. Сделано с любовью к пушистым друзьям. Мы верим, что каждый питомец заслуживает королевского обращения.
+            </p>
+</div>
+<div class="grid grid-cols-2 gap-x-12 gap-y-4">
+<a class="font-headline text-base font-bold text-on-surface-variant hover:text-primary transition-all" href="#">Политика конфиденциальности</a>
+<a class="font-headline text-base font-bold text-on-surface-variant hover:text-primary transition-all" href="#">Доставка</a>
+<a class="font-headline text-base font-bold text-on-surface-variant hover:text-primary transition-all" href="#">Возврат</a>
+<a class="font-headline text-base font-bold text-on-surface-variant hover:text-primary transition-all" href="#">FAQ</a>
+</div>
+<div class="flex gap-4">
+<button class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all shadow-lg hover:-translate-y-1">
+<span class="material-symbols-outlined text-2xl" data-icon="share">share</span>
+</button>
+<button class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all shadow-lg hover:-translate-y-1">
+<span class="material-symbols-outlined text-2xl" data-icon="mail">mail</span>
+</button>
+</div>
+</footer>
+</body></html>
