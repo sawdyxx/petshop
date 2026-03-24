@@ -40,12 +40,12 @@
 }
 
 .btn-secondary {
-  background: #edf2f7;
-  color: #1f2937;
+  background: #efe8d8;
+  color: #4c2300;
 }
 
 .btn-secondary:hover {
-  background: #dfe7ef;
+  background: #e4dccb;
   transform: translateY(-1px);
 }
 
@@ -60,17 +60,18 @@
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 16px;
+  padding-top: 44px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   position: relative;
-  box-shadow: 0 10px 24px rgba(18, 36, 62, 0.06);
+  box-shadow: 0 10px 24px rgba(63, 43, 23, 0.06);
   transition: 0.25s ease;
 }
 
 .product-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(18, 36, 62, 0.12);
+  box-shadow: 0 16px 32px rgba(63, 43, 23, 0.12);
 }
 
 .favorite-btn {
@@ -85,6 +86,23 @@
   cursor: pointer;
 }
 
+.product-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ffe8cc;
+  color: #7e3e00;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.product-badge.sale {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
 .favorite-btn.active {
   color: #ef4444;
 }
@@ -95,8 +113,14 @@
   border-radius: 12px;
   display: grid;
   place-items: center;
-  background: #f1f5f9;
-  font-size: 30px;
+  background: #fff3de;
+  overflow: hidden;
+}
+
+.product-emoji img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .product-meta,

@@ -3,15 +3,9 @@
 <html class="light" lang="ru"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ЗооРадость — Каталог товаров для питомцев</title>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Be_Vietnam_Pro:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be_Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
       tailwind.config = {
@@ -19,57 +13,57 @@
         theme: {
           extend: {
             colors: {
-              "on-surface-variant": "#5f5b51",
-              "primary-container": "#fc8200",
-              "background": "#fdf6e8",
-              "on-primary": "#fff0e8",
-              "surface-container-lowest": "#ffffff",
-              "secondary-fixed-dim": "#a5c5ff",
-              "surface-bright": "#fdf6e8",
-              "on-tertiary-container": "#006123",
-              "tertiary": "#006a27",
               "surface-dim": "#dbd4c2",
-              "on-error": "#ffefec",
               "outline-variant": "#b2ada0",
-              "primary-fixed": "#fc8200",
-              "surface": "#fdf6e8",
-              "surface-variant": "#e4dccb",
-              "on-error-container": "#520c00",
-              "tertiary-dim": "#005d21",
-              "inverse-surface": "#100e07",
-              "on-primary-container": "#3f1c00",
-              "inverse-on-surface": "#a29c90",
-              "tertiary-fixed-dim": "#8bed95",
-              "error": "#b02500",
-              "error-container": "#f95630",
-              "surface-container-highest": "#e4dccb",
-              "outline": "#7b766b",
-              "on-surface": "#312f25",
-              "on-secondary": "#eff2ff",
-              "primary": "#904800",
-              "secondary-fixed": "#bcd2ff",
-              "surface-tint": "#904800",
-              "on-secondary-fixed-variant": "#004f9e",
+              "on-primary": "#fff0e8",
               "surface-container-high": "#e9e2d1",
-              "on-secondary-container": "#00468e",
-              "surface-container-low": "#f7f0e1",
+              "on-error": "#ffefec",
+              "on-error-container": "#520c00",
               "inverse-primary": "#fc8200",
-              "primary-fixed-dim": "#e87700",
-              "surface-container": "#efe8d8",
-              "on-primary-fixed": "#010000",
-              "secondary": "#005ab2",
+              "on-primary-container": "#3f1c00",
+              "surface-container-low": "#f7f0e1",
               "primary-dim": "#7e3e00",
-              "on-background": "#312f25",
-              "error-dim": "#b92902",
-              "on-tertiary-fixed-variant": "#006c28",
+              "error": "#b02500",
+              "primary": "#904800",
+              "on-secondary": "#eff2ff",
               "secondary-dim": "#004e9d",
-              "on-tertiary-fixed": "#004c1a",
-              "tertiary-fixed": "#99fba1",
-              "tertiary-container": "#99fba1",
+              "on-tertiary-fixed-variant": "#006c28",
               "secondary-container": "#bcd2ff",
+              "on-primary-fixed": "#010000",
+              "on-surface": "#312f25",
+              "on-primary-fixed-variant": "#4c2300",
+              "surface-container-highest": "#e4dccb",
+              "tertiary": "#006a27",
+              "error-container": "#f95630",
+              "tertiary-dim": "#005d21",
+              "on-secondary-container": "#00468e",
+              "surface-container": "#efe8d8",
+              "surface": "#fdf6e8",
+              "secondary-fixed": "#bcd2ff",
+              "secondary": "#005ab2",
               "on-tertiary": "#cfffcd",
+              "surface-bright": "#fdf6e8",
+              "on-tertiary-fixed": "#004c1a",
+              "on-tertiary-container": "#006123",
+              "primary-fixed": "#fc8200",
+              "secondary-fixed-dim": "#a5c5ff",
+              "primary-container": "#fc8200",
+              "tertiary-fixed-dim": "#8bed95",
+              "inverse-surface": "#100e07",
+              "on-background": "#312f25",
+              "surface-container-lowest": "#ffffff",
+              "error-dim": "#b92902",
+              "surface-tint": "#904800",
+              "outline": "#7b766b",
+              "primary-fixed-dim": "#e87700",
+              "tertiary-fixed": "#99fba1",
+              "on-secondary-fixed-variant": "#004f9e",
+              "surface-variant": "#e4dccb",
+              "tertiary-container": "#99fba1",
+              "on-surface-variant": "#5f5b51",
+              "inverse-on-surface": "#a29c90",
               "on-secondary-fixed": "#00336b",
-              "on-primary-fixed-variant": "#4c2300"
+              "background": "#fdf6e8"
             },
             fontFamily: {
               "headline": ["Plus Jakarta Sans"],
@@ -84,286 +78,193 @@
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            display: inline-block;
-            line-height: 1;
         }
-        .bouncy-hover:hover {
-            transform: scale(1.05) translateY(-4px);
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        .organic-blob {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
         }
-        .toy-shadow {
-            box-shadow: 0px 10px 30px rgba(49, 47, 37, 0.06);
-        }
-        .glass-nav {
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-        }
-        /* Hide scrollbar for Chrome, Safari and Opera */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        /* Hide scrollbar for IE, Edge and Firefox */
-        .no-scrollbar {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
-        }
+        .tonal-shift { transition: background-color 0.3s ease; }
     </style>
 </head>
-<body class="bg-background text-on-surface font-body selection:bg-secondary-fixed selection:text-on-secondary-fixed">
-<!-- Top Navigation Bar -->
-<header class="fixed top-0 w-full z-50 bg-orange-50/80 dark:bg-stone-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
-<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-<div class="text-2xl font-black text-orange-700 dark:text-orange-500 font-headline tracking-tight">ЗооРадость</div>
-<nav class="hidden md:flex items-center space-gap-6 gap-8">
-<a class="text-stone-600 dark:text-stone-400 hover:text-orange-500 transition-colors font-headline font-bold" href="#">Кошки</a>
-<a class="text-orange-700 dark:text-orange-400 border-b-4 border-orange-500 rounded-full px-4 py-1 font-headline font-bold" href="#">Собаки</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-orange-500 transition-colors font-headline font-bold" href="#">Птицы</a>
-<a class="text-stone-600 dark:text-stone-400 hover:text-orange-500 transition-colors font-headline font-bold" href="#">Скидки</a>
-</nav>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 flex justify-between items-center px-8 py-4 max-w-7xl mx-auto bg-[#fdf6e8]/80 dark:bg-[#312f25]/80 backdrop-blur-md rounded-full mt-4 mx-4 shadow-[0px_10px_30px_rgba(49,47,37,0.06)]">
+<div class="text-2xl font-black text-[#904800] dark:text-[#fc8200] tracking-tighter font-headline">
+            ЗооРадость
+        </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-headline font-bold text-base tracking-tight text-[#312f25] dark:text-[#fdf6e8] opacity-70 hover:scale-105 hover:text-[#FF8400] transition-transform duration-200" href="#">Магазин</a>
+<a class="font-headline font-bold text-base tracking-tight text-[#312f25] dark:text-[#fdf6e8] opacity-70 hover:scale-105 hover:text-[#FF8400] transition-transform duration-200" href="#">Для собак</a>
+<a class="font-headline font-bold text-base tracking-tight text-[#312f25] dark:text-[#fdf6e8] opacity-70 hover:scale-105 hover:text-[#FF8400] transition-transform duration-200" href="#">Для кошек</a>
+<a class="font-headline font-bold text-base tracking-tight text-[#312f25] dark:text-[#fdf6e8] opacity-70 hover:scale-105 hover:text-[#FF8400] transition-transform duration-200" href="#">Акции</a>
+<a class="font-headline font-bold text-base tracking-tight text-[#312f25] dark:text-[#fdf6e8] opacity-70 hover:scale-105 hover:text-[#FF8400] transition-transform duration-200" href="#">Блог</a>
+</div>
 <div class="flex items-center gap-4">
-<button class="p-2 text-stone-600 hover:scale-105 hover:bg-orange-100/50 transition-transform active:scale-95">
-<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
-</button>
-<button class="p-2 text-stone-600 hover:scale-105 hover:bg-orange-100/50 transition-transform active:scale-95">
-<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
-</button>
+<button class="p-2 text-[#904800] dark:text-[#fc8200] hover:scale-105 transition-transform"><span class="material-symbols-outlined">favorite</span></button>
+<button class="p-2 text-[#904800] dark:text-[#fc8200] hover:scale-105 transition-transform"><span class="material-symbols-outlined">shopping_basket</span></button>
+<button class="p-2 text-[#904800] dark:text-[#fc8200] hover:scale-105 transition-transform"><span class="material-symbols-outlined">person</span></button>
 </div>
-</div>
-</header>
-<main class="pt-28 pb-32 max-w-7xl mx-auto px-6">
-<!-- Editorial Header Section -->
-<section class="mb-16">
-<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight text-on-surface mb-4">Мир хвостатых радостей</h1>
-<p class="text-on-surface-variant text-xl max-w-2xl leading-relaxed">Самые уютные лежанки, вкусные лакомства и яркие игрушки, отобранные с любовью для ваших любимых пушистиков.</p>
-</section>
-<div class="flex flex-col lg:flex-row gap-12">
-<!-- Sidebar Filters -->
-<aside class="w-full lg:w-72 shrink-0 space-y-10">
-<div>
-<h3 class="font-headline text-xl font-bold mb-6 flex items-center gap-2">
-<span class="material-symbols-outlined text-primary" data-icon="tune">tune</span>
-                        Фильтры
-                    </h3>
+</nav>
+<main class="max-w-7xl mx-auto px-6">
+<!-- Hero Section -->
+<section class="mt-16 md:mt-24 mb-32 grid md:grid-cols-2 gap-12 items-center">
 <div class="space-y-8">
-<!-- Category Filter -->
-<div class="space-y-4">
-<span class="font-headline text-sm uppercase tracking-widest text-on-surface-variant">Категория</span>
-<div class="flex flex-wrap gap-2">
-<button class="px-5 py-2 bg-secondary-container text-on-secondary-container rounded-full font-bold text-sm bouncy-hover">Игрушки</button>
-<button class="px-5 py-2 bg-surface-container text-on-surface rounded-full font-bold text-sm bouncy-hover">Корм</button>
-<button class="px-5 py-2 bg-surface-container text-on-surface rounded-full font-bold text-sm bouncy-hover">Уход</button>
-<button class="px-5 py-2 bg-surface-container text-on-surface rounded-full font-bold text-sm bouncy-hover">Лежанки</button>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tighter text-on-surface">
+                    Мы любим ваших питомцев так же сильно, как и вы!
+                </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant font-medium leading-relaxed max-w-xl">
+                    Создаем пространство, где каждый хвостик чувствует себя особенным, а каждый хозяин — спокойным.
+                </p>
+<div class="pt-4 flex gap-4">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-[0px_10px_30px_rgba(144,72,0,0.2)]">
+                        Познакомиться с нами
+                    </button>
 </div>
 </div>
-<!-- Temperament Mood Chips -->
-<div class="space-y-4">
-<span class="font-headline text-sm uppercase tracking-widest text-on-surface-variant">Характер питомца</span>
-<div class="grid grid-cols-2 gap-3">
-<label class="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container transition-colors group">
-<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary-container" type="checkbox"/>
-<span class="text-sm font-medium">Активный</span>
-</label>
-<label class="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container transition-colors group">
-<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary-container" type="checkbox"/>
-<span class="text-sm font-medium">Ленивый</span>
-</label>
-<label class="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container transition-colors group">
-<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary-container" type="checkbox"/>
-<span class="text-sm font-medium">Умный</span>
-</label>
-<label class="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg cursor-pointer hover:bg-surface-container transition-colors group">
-<input class="w-5 h-5 rounded border-outline text-primary focus:ring-primary-container" type="checkbox"/>
-<span class="text-sm font-medium">Грызун</span>
-</label>
-</div>
-</div>
-<!-- Price Range Slider Styling Placeholder -->
-<div class="space-y-4">
-<span class="font-headline text-sm uppercase tracking-widest text-on-surface-variant">Цена (₽)</span>
-<div class="h-2 bg-surface-container-highest rounded-full relative">
-<div class="absolute left-1/4 right-1/4 h-full bg-primary-container rounded-full"></div>
-<div class="absolute left-1/4 top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-primary rounded-full shadow-md cursor-pointer"></div>
-<div class="absolute right-1/4 top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-primary rounded-full shadow-md cursor-pointer"></div>
-</div>
-<div class="flex justify-between text-xs font-bold text-on-surface-variant">
-<span>500 ₽</span>
-<span>5000 ₽</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Featured Section (Bento Style Sidebar) -->
-<div class="bg-primary-fixed p-6 rounded-lg text-on-primary-fixed space-y-4 relative overflow-hidden">
-<div class="relative z-10">
-<span class="bg-white/20 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-tighter">Акция дня</span>
-<h4 class="font-headline text-2xl font-black mt-2">Скидка 20% на все лакомства</h4>
-<p class="text-sm opacity-90">Порадуйте своего друга самым вкусным печеньем!</p>
-</div>
-<div class="absolute -right-4 -bottom-4 opacity-20">
-<span class="material-symbols-outlined text-8xl" data-icon="pets">pets</span>
-</div>
-</div>
-</aside>
-<!-- Product Grid -->
-<section class="flex-1">
-<div class="flex justify-between items-center mb-10">
-<span class="text-on-surface-variant font-medium">Найдено 24 товара</span>
 <div class="relative">
-<select class="appearance-none bg-surface-container-low border-none rounded-full px-6 py-2 pr-12 font-bold text-sm focus:ring-2 focus:ring-primary/20 cursor-pointer">
-<option>Сначала популярные</option>
-<option>Сначала дешевые</option>
-<option>Сначала дорогие</option>
-</select>
-<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant text-sm" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+<div class="absolute -top-10 -left-10 w-64 h-64 bg-secondary-container opacity-30 rounded-full blur-3xl"></div>
+<div class="relative rounded-lg overflow-hidden aspect-[4/5] md:aspect-square">
+<img alt="Happy pet and staff" class="w-full h-full object-cover rounded-lg" data-alt="Cheerful pet shop employee smiling while holding a happy golden retriever puppy in a bright sunlit modern retail store environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7WbTbOsIMa0IZsvFNglzbHYbSs3tIlV1WaKNREAOumYxEADQa3Tg8Ynu2xKDP77OtQj1YbkAoXZ7Qnmh0mWaZVkQzW_ULYCsWbeewGFF5M-xjpMkVLs1fXsiRLI-FGUm9xSUxI3-ebJJ4Fa2mOWfX_l3bV0MSbIblQZS_gxrnd_65UepLkaMipzP_oU81WDOrAdowdDBu6KxvNNCTVFISfmBVbWA8PetqEv3Tpuw_suXcSkSRvPGZMIby70edI8P8UbRu17tYto59"/>
 </div>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
-<!-- Product Card 1 -->
-<article class="bg-surface-container-lowest rounded-lg p-6 toy-shadow bouncy-hover group relative">
-<div class="absolute top-4 left-4 z-10">
-<span class="bg-primary-container text-on-primary-container px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest">New</span>
-</div>
-<div class="bg-surface-container-low rounded-lg aspect-square mb-6 overflow-hidden flex items-center justify-center relative">
-<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Soft orange plush dog toy shaped like a bone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQy1SkmP-ABOUm5z2Kf-qR6m9KvAaySPWVTok_KpgW5ftxoQUoIftBEMHxU-9WoqCh-Ifner2hWq7kB7uoIrjE1MJUuPSTa_5gRW6teQQ5WURDKwWwsteCAdBToMzRB3BQRSiSrLiK0XLJKnOvdeRu0__AQnabx81I1SrH7FBcJHriuy6NKQTPblmeenXvtPwM6uQz54XC0TIyHASzUSTdx3-i3MkGnOOZi8ug9QLp589LQw4uyITbTurIQFpcKVioaGcApNlQ2KJ2"/>
-</div>
-<div class="space-y-2">
-<h3 class="font-headline text-xl font-bold leading-tight"><a href="/product/myagkaya-kostochka-solnechniy-blik" target="_top">Мягкая косточка "Солнечный блик"</a></h3>
-<p class="text-on-surface-variant text-sm">Прочная ткань, гипоаллергенно</p>
-<div class="flex items-center justify-between pt-4">
-<span class="font-headline text-2xl font-black text-primary">890 ₽</span>
-<button class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white active:scale-90 transition-transform shadow-lg shadow-primary/20">
-<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
-</button>
-</div>
-</div>
-</article>
-<!-- Product Card 2 -->
-<article class="bg-surface-container-lowest rounded-lg p-6 toy-shadow bouncy-hover group relative">
-<div class="absolute top-4 left-4 z-10">
-<span class="bg-secondary text-on-secondary px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest">Sale</span>
-</div>
-<div class="bg-surface-container-low rounded-lg aspect-square mb-6 overflow-hidden flex items-center justify-center">
-<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Premium wooden cat climbing tree with plush levels" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQB4DTi47cqtzFp9_DPToeY_P94tVK7yuLiwXjGKlTYX72SrFqS8Po53APqbj8TG-9zqkQY_6l5cwrgtUpBSmPi0mWUWssOlTLvXVWQ3Je0CDgPq8PnaVnrK0OODC48pA-1L0DElU24kfz8QnirBaTJFKpL9BUIzenrdqa8Q7Jq-OglIbQE9aCPaCHAQfdF8rEtOoDcoWXvJyCoP8SPgOFg4mIQn1zpUFWiZkZEhvTDrVOluBvK45ZzJBanamgOvjVqnTOl0k8ojVb"/>
-</div>
-<div class="space-y-2">
-<h3 class="font-headline text-xl font-bold leading-tight"><a href="/product/mnogourovnevyy-zamok-murlyka" target="_top">Многоуровневый замок "Мурлыка"</a></h3>
-<p class="text-on-surface-variant text-sm">Натуральное дерево, 150 см</p>
-<div class="flex items-center justify-between pt-4">
-<div>
-<span class="block text-xs text-error font-bold line-through">12 400 ₽</span>
-<span class="font-headline text-2xl font-black text-primary">9 900 ₽</span>
-</div>
-<button class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white active:scale-90 transition-transform shadow-lg shadow-primary/20">
-<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
-</button>
-</div>
-</div>
-</article>
-<!-- Product Card 3 -->
-<article class="bg-surface-container-lowest rounded-lg p-6 toy-shadow bouncy-hover group">
-<div class="bg-surface-container-low rounded-lg aspect-square mb-6 overflow-hidden flex items-center justify-center">
-<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Bag of organic gourmet treats for dogs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfpgxRqM98u3JejMxfDdgFHSFwcqbdp1mTkmLJzO-BWDaD3szjLlDHLQnu9HOUGYON-Dn97DZYHnFs28uJPS7Vxflt5DNLlMwPjR79dxh6SyNvMh4Anj6UX6xbrybldN7_Od495VPx9HBMnLmICnsCODsu_YhQuFkKgOIOUCY98F_Lg7a7qtrGyzDUXrDXB5igu5jkTHbjLC6bQ3tv86lQmxlV3TVu6qI0EwXIz1ZGixGMaqk0yzP-6923nBdydG6sPNZjhW7dcxdn"/>
-</div>
-<div class="space-y-2">
-<h3 class="font-headline text-xl font-bold leading-tight"><a href="/product/organicheskie-lakomstva-bio-gav" target="_top">Органические лакомства "Био-Гав"</a></h3>
-<p class="text-on-surface-variant text-sm">Говядина и черника, 200г</p>
-<div class="flex items-center justify-between pt-4">
-<span class="font-headline text-2xl font-black text-primary">540 ₽</span>
-<button class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white active:scale-90 transition-transform shadow-lg shadow-primary/20">
-<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
-</button>
-</div>
-</div>
-</article>
-<!-- Product Card 4 -->
-<article class="bg-surface-container-lowest rounded-lg p-6 toy-shadow bouncy-hover group">
-<div class="bg-surface-container-low rounded-lg aspect-square mb-6 overflow-hidden flex items-center justify-center">
-<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Teal colored interactive smart ball toy for pets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCno8idiBhv6ZQ48WswraJmkiK8H4KXLNhlnYoJKuhJeTAQteXT2HAku_G9p9E4cgJMeUskLdnmdxPRahyJeEcea8SAeKLRaIn7_7R7XNXQw3Kuif7BnFcb8Npbh-HttNkztXsUZwXPKPSyLA3KdLVckAab8bSlST3gQige3F1IZyMvlLytwgJqoEttJEMY2JJSQmqqd5PZaEGa3mqSQH2l_GEDKKjm_KoomS8SbAYOB95Rcu8pssJvQYBT6ziLX1P1JNFX_Rd_vVUE"/>
-</div>
-<div class="space-y-2">
-<h3 class="font-headline text-xl font-bold leading-tight"><a href="/product/umnyy-myach-interaktiv" target="_top">Умный мяч "Интерактив"</a></h3>
-<p class="text-on-surface-variant text-sm">Светится в темноте, 3 режима</p>
-<div class="flex items-center justify-between pt-4">
-<span class="font-headline text-2xl font-black text-primary">1 250 ₽</span>
-<button class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white active:scale-90 transition-transform shadow-lg shadow-primary/20">
-<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
-</button>
-</div>
-</div>
-</article>
-<!-- Product Card 5 -->
-<article class="bg-surface-container-lowest rounded-lg p-6 toy-shadow bouncy-hover group">
-<div class="bg-surface-container-low rounded-lg aspect-square mb-6 overflow-hidden flex items-center justify-center">
-<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Soft fleece grey round bed for a cat or small dog" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhMbRshT-aPaX7C8zpAWRQaPbJMydhMXqgIjFEfthK2sH1IjI2pUlW-f-GZmZbCs9Hjy3DVfs4gbJT09MQ1QwPo6gpGM1A0myNAfwfYVVVvU-bnUAUX3BjV1-Mj-k4R92OcTUjkuwTkr4qoLfXudF83o-4srRxQC7w7Gra2kwiGAmVL89YccPYeUWuCDiDlJI3-dMsUUkKf9RItAvxZJmW-rygF1HJjZNQh11GNapyU2bdnSXyCNQ9wSDKoR4tyST-noBscYXPbnNH"/>
-</div>
-<div class="space-y-2">
-<h3 class="font-headline text-xl font-bold leading-tight"><a href="/product/oblachnaya-lezhanka-nezhnost" target="_top">Облачная лежанка "Нежность"</a></h3>
-<p class="text-on-surface-variant text-sm">Эффект памяти, стирается в машинке</p>
-<div class="flex items-center justify-between pt-4">
-<span class="font-headline text-2xl font-black text-primary">3 100 ₽</span>
-<button class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white active:scale-90 transition-transform shadow-lg shadow-primary/20">
-<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
-</button>
-</div>
-</div>
-</article>
-<!-- Product Card 6 -->
-<article class="bg-surface-container-lowest rounded-lg p-6 toy-shadow bouncy-hover group">
-<div class="bg-surface-container-low rounded-lg aspect-square mb-6 overflow-hidden flex items-center justify-center">
-<img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Automatic pet water fountain with flowing water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBON5_YVw8h7vCMCmaGVron0xrOdJEMs8C8p7SjDU6HXq4zbo-jksePtESgviuKx8maSAJ1CHuu39SVx3KW5mDGBadbZ3m9HPRBaVNfIrXatSq-8Y8mybQqNQgXx0AmGCBD1SWqji8VkMcEl29AxpRwWA_CTW2fbWNGdcpOByVGFrEgWdKgDXLG-98WrX8F2lqa08DGJlP5wxtNHI51VaRMoxp5wMKJhx6_vtXvKNDsdUI7ysdU9u7e_gyGInP6zzk8FoQWLXKzsPPj"/>
-</div>
-<div class="space-y-2">
-<h3 class="font-headline text-xl font-bold leading-tight"><a href="/product/pitevoy-fontanchik-rodnik" target="_top">Питьевой фонтанчик "Родник"</a></h3>
-<p class="text-on-surface-variant text-sm">Бесшумный насос, фильтрация</p>
-<div class="flex items-center justify-between pt-4">
-<span class="font-headline text-2xl font-black text-primary">2 450 ₽</span>
-<button class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white active:scale-90 transition-transform shadow-lg shadow-primary/20">
-<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
-</button>
-</div>
-</div>
-</article>
-</div>
-<!-- Pagination -->
-<nav class="mt-16 flex justify-center items-center gap-4">
-<button class="w-12 h-12 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface">
-<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
-</button>
-<div class="flex gap-2">
-<button class="w-12 h-12 rounded-full bg-primary text-white font-bold">1</button>
-<button class="w-12 h-12 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container font-bold">2</button>
-<button class="w-12 h-12 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container font-bold">3</button>
-<span class="px-2 self-end pb-2 font-bold text-on-surface-variant">...</span>
-<button class="w-12 h-12 rounded-full bg-surface-container-low text-on-surface hover:bg-surface-container font-bold">12</button>
-</div>
-<button class="w-12 h-12 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface">
-<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
-</button>
-</nav>
 </section>
+<!-- Our Story Section -->
+<section class="py-24 mb-32 bg-surface-container rounded-lg px-8 md:px-16 grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1 relative">
+<div class="organic-blob bg-primary-container w-full aspect-square overflow-hidden shadow-2xl">
+<img alt="Our history" class="w-full h-full object-cover" data-alt="Cozy interior of a boutique pet store with wooden shelves and warm lighting, capturing a boutique artisanal shopping atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFswLeP6_i4L7tGAHeKnpj9beKDW8CmdEAUEke2waV3C7R_b4VuZNw_cQ8t28EvdFvs4n0HYJQ26YdDK-Nz0yQcsFr_vNelP68HtOaSIxNuoZEEpgWU2kG2MhFBSjbaUCSOKYTquBYqEOWuWWklVhf-4YBgrUHI-klcB5Vhgxst_gbdg-mYvXyg10MLVmr-xiJLY31asvOOKlm9GAKSTtdPASaJH-ngFO9-8Lg--I60Z4Ld7NmJpMTOgHA-WN-5--twYFKRcGqQDQ3"/>
 </div>
+</div>
+<div class="order-1 md:order-2 space-y-6">
+<span class="inline-block py-1 px-4 bg-primary-container text-on-primary-container rounded-full text-sm font-bold tracking-widest uppercase">Наша История</span>
+<h2 class="font-headline text-4xl font-bold tracking-tight">Путь от одного спасенного котенка до лучшего магазина в городе.</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                    Все началось 10 лет назад в маленьком гараже. Наша основательница, Анна, не могла найти качественный корм для своего питомца и решила создать место, где качество стоит на первом месте. 
+                </p>
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                    Сегодня "ЗооРадость" — это не просто магазин. Это сообщество любителей животных, которые верят, что каждый питомец заслуживает самого лучшего ухода, внимания и самых вкусных лакомств.
+                </p>
+</div>
+</section>
+<!-- Our Values Section -->
+<section class="mb-32">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight">Наши Ценности</h2>
+<p class="text-on-surface-variant text-lg max-w-2xl mx-auto">То, что заставляет наши сердца биться чаще каждый рабочий день.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Value 1 -->
+<div class="bg-surface-container-lowest p-10 rounded-lg space-y-4 hover:shadow-xl transition-shadow border-b-8 border-primary-container">
+<div class="w-16 h-16 rounded-2xl bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-4xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<h3 class="font-headline text-2xl font-bold">Любовь</h3>
+<p class="text-on-surface-variant leading-relaxed">Каждый гость для нас — родной. Мы относимся к вашим питомцам как к своим собственным.</p>
+</div>
+<!-- Value 2 -->
+<div class="bg-surface-container-lowest p-10 rounded-lg space-y-4 hover:shadow-xl transition-shadow border-b-8 border-secondary">
+<div class="w-16 h-16 rounded-2xl bg-secondary-container/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-4xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<h3 class="font-headline text-2xl font-bold">Качество</h3>
+<p class="text-on-surface-variant leading-relaxed">Только проверенные бренды и натуральные составы. Мы лично тестируем каждую новинку.</p>
+</div>
+<!-- Value 3 -->
+<div class="bg-surface-container-lowest p-10 rounded-lg space-y-4 hover:shadow-xl transition-shadow border-b-8 border-tertiary">
+<div class="w-16 h-16 rounded-2xl bg-tertiary-container/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-4xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<h3 class="font-headline text-2xl font-bold">Скорость</h3>
+<p class="text-on-surface-variant leading-relaxed">Ваш питомец не должен ждать. Доставляем заказы быстрее, чем виляет хвостик корги.</p>
+</div>
+<!-- Value 4 -->
+<div class="bg-surface-container-lowest p-10 rounded-lg space-y-4 hover:shadow-xl transition-shadow border-b-8 border-primary-dim">
+<div class="w-16 h-16 rounded-2xl bg-primary-container/20 flex items-center justify-center text-primary-dim">
+<span class="material-symbols-outlined text-4xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</div>
+<h3 class="font-headline text-2xl font-bold">Поддержка</h3>
+<p class="text-on-surface-variant leading-relaxed">Всегда на связи, чтобы помочь с выбором или просто обсудить характер вашего кота.</p>
+</div>
+</div>
+</section>
+<!-- Our Team Section -->
+<section class="mb-32">
+<div class="text-center mb-16 space-y-4">
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight">Наша Команда</h2>
+<p class="text-on-surface-variant text-lg max-w-2xl mx-auto">Люди, которые делают мир хвостиков ярче.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+<div class="group">
+<div class="relative mb-6 inline-block">
+<div class="absolute inset-0 bg-primary-container rounded-full scale-105 opacity-0 group-hover:opacity-20 transition-opacity"></div>
+<img alt="Staff member" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-surface shadow-lg" data-alt="Close-up portrait of a friendly woman smiling warmly at the camera with a bright outdoor natural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy5BDflBlrRaJ44zz-A9WqI8ufHlnpDxbFcHsrjFc4CPuzabbnJqfmGtKvDqs0U5bWqjpMlGrJbwTZ_0gAtXwY483IHEHVfueqoq7ktzmzvU6ag6KFbQ0t4QSeH0-sky6mqhgJyVlmkH2vh5bLglvrBcf060-k0anTl3Ix_oarV-CBWbx3wSTeRw1kGAPTtSkV-njip933xO7n_8GA3U6ACCzcdZH7IQLUW-rGfdqfOav48AuCDxlK1q88cQd3MnCoj8API_R2DLRm"/>
+</div>
+<h4 class="font-headline text-xl font-bold">Анна</h4>
+<p class="text-primary font-bold">Chief of Treats</p>
+</div>
+<div class="group">
+<div class="relative mb-6 inline-block">
+<div class="absolute inset-0 bg-secondary-container rounded-full scale-105 opacity-0 group-hover:opacity-20 transition-opacity"></div>
+<img alt="Staff member" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-surface shadow-lg" data-alt="Portrait of a kind-looking man with a gentle expression and stylish spectacles in a soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ3G3_OI72_w8vQ_Of1VSUACaA-DtmFw2-dgwytfGiGY2uSOgOdAm23pXSZWCSaDho9GbGWiklipTP5oZFyk8AfIKlQMDElAUyOuO3caIVyHRBLAEKDqxi6fvkDL-RhJLg66ZRR4vdGw6SHYJ-k68R21-Xi1KGqSZZehaujNyMU2QxiygAYdNGSW4A6g3nADdk1vJOQDIs5JesjZhdARJogzfrmRPCLzKEtYxSnAJGPeA82mckQ2i4woYRDDGSAtOvBYJrUZwBHmvy"/>
+</div>
+<h4 class="font-headline text-xl font-bold">Максим</h4>
+<p class="text-secondary font-bold">Cat Whisperer</p>
+</div>
+<div class="group">
+<div class="relative mb-6 inline-block">
+<div class="absolute inset-0 bg-tertiary-container rounded-full scale-105 opacity-0 group-hover:opacity-20 transition-opacity"></div>
+<img alt="Staff member" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-surface shadow-lg" data-alt="Radiant young woman with a joyful smile wearing casual clothing, well-lit by soft morning window light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDojJYjgUAKcrZTOvHPckW-XXHzgN0JgCbSZAYoVHmPDjP_NFi07e7QZoCcxudp8nC5dTtB-jjxa7jM_UtTN3yqtpbpDcfDZ7IGZDp7BZGH-zMxWp2o42eYCXQgQe8gCTkds7cnLz6QfSR6oglDfhKMObXanCYFpjfLYRGh9kZKP9ZZWhVJLJckj3snQmpYB8O8EMcshEhg95y2FVfnVxoRQdMfTqRedBP9XBljg9EhCsPHpT7Cf3Cv7Ny4j7VsDKush6-Qnb_Tfjr"/>
+</div>
+<h4 class="font-headline text-xl font-bold">Мария</h4>
+<p class="text-tertiary font-bold">Happiness Manager</p>
+</div>
+<div class="group">
+<div class="relative mb-6 inline-block">
+<div class="absolute inset-0 bg-primary-container rounded-full scale-105 opacity-0 group-hover:opacity-20 transition-opacity"></div>
+<img alt="Staff member" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-surface shadow-lg" data-alt="Professional man with a friendly and approachable demeanor smiling confidently in a modern home office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSdU6L6CWezKg0hsb6JOUNN3xn2D_l__nFzjAvT6A4PiMt9qTcpYdBgoNLVhhJvqJPZ4d9I9xCT35Ug6nP2x3EvZL5mgMGOE5Wp6r5KF-mi_h8xQiBztcN_r0cDq4OWElEe8D8xV1G7S8I9I58ofg7YE--pygMp84h9sbAqEBFsV3_UYZGO23NYzkmuiktT8o8nPSZIZ-Po34loiHrmmUr_EBsHTTxYLPyXR-1pAgZ5Thi8Z-yIjMhBQPQEaeabXhHh8P7Dcxtc0tu"/>
+</div>
+<h4 class="font-headline text-xl font-bold">Дмитрий</h4>
+<p class="text-primary-dim font-bold">Dog Toy Expert</p>
+</div>
+</div>
+</section>
+<!-- CTA Banner -->
+<section class="mb-32">
+<div class="relative bg-primary-container rounded-lg p-12 md:p-20 overflow-hidden">
+<div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-surface opacity-10 rounded-full blur-3xl"></div>
+<div class="relative z-10 text-center space-y-8">
+<h2 class="font-headline text-4xl md:text-6xl font-black text-on-primary-container tracking-tighter">Вступай в нашу стаю!</h2>
+<p class="text-xl md:text-2xl text-on-primary-container/80 max-w-2xl mx-auto font-medium">
+                        Подпишитесь на наши новости и получайте эксклюзивные советы по уходу и скидки до 15% на первый заказ.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+<input class="w-full sm:w-80 px-8 py-4 rounded-full bg-surface-container-lowest border-none focus:ring-4 focus:ring-secondary/30 text-lg" placeholder="Ваш email" type="email"/>
+<button class="w-full sm:w-auto px-10 py-4 bg-inverse-surface text-surface rounded-full font-bold text-lg hover:scale-105 transition-transform">
+                            Присоединиться
+                        </button>
+</div>
+</div>
+</div>
+</section>
 </main>
-<!-- Bottom Navigation Bar (Mobile only) -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/90 dark:bg-stone-900/90 backdrop-blur-xl rounded-t-[32px] z-50 shadow-[0_-10px_30px_rgba(49,47,37,0.06)]">
-<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-6 py-2 hover:bg-orange-50 dark:hover:bg-stone-800 rounded-[24px]" href="#">
-<span class="material-symbols-outlined" data-icon="home">home</span>
-<span class="font-['Be_Vietnam_Pro'] text-xs font-bold uppercase tracking-wider mt-1">Главная</span>
+<!-- Footer -->
+<footer class="bg-[#efe8d8] dark:bg-[#1a1914] rounded-t-[3rem] mt-20 w-full py-12 px-10 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="text-xl font-bold text-[#904800] font-headline">ЗооРадость</div>
+<p class="font-['Be_Vietnam_Pro'] text-sm font-medium text-[#312f25] dark:text-[#fdf6e8] opacity-80">
+                © 2024 ЗооРадость. С любовью к вашим питомцам.
+            </p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-['Be_Vietnam_Pro'] text-sm font-medium text-[#312f25] dark:text-[#fdf6e8] opacity-80 hover:text-[#904800] dark:hover:text-[#fc8200] transition-colors" href="#">О нас</a>
+<a class="font-['Be_Vietnam_Pro'] text-sm font-medium text-[#312f25] dark:text-[#fdf6e8] opacity-80 hover:text-[#904800] dark:hover:text-[#fc8200] transition-colors" href="#">Доставка</a>
+<a class="font-['Be_Vietnam_Pro'] text-sm font-medium text-[#312f25] dark:text-[#fdf6e8] opacity-80 hover:text-[#904800] dark:hover:text-[#fc8200] transition-colors" href="#">Возврат</a>
+<a class="font-['Be_Vietnam_Pro'] text-sm font-medium text-[#312f25] dark:text-[#fdf6e8] opacity-80 hover:text-[#904800] dark:hover:text-[#fc8200] transition-colors" href="#">Контакты</a>
+<a class="font-['Be_Vietnam_Pro'] text-sm font-medium text-[#312f25] dark:text-[#fdf6e8] opacity-80 hover:text-[#904800] dark:hover:text-[#fc8200] transition-colors" href="#">Политика конфиденциальности</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
 </a>
-<a class="flex flex-col items-center justify-center bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-200 rounded-[24px] px-6 py-2 transition-all" href="#">
-<span class="material-symbols-outlined" data-icon="pets" data-weight="fill" style="font-variation-settings: 'FILL' 1;">pets</span>
-<span class="font-['Be_Vietnam_Pro'] text-xs font-bold uppercase tracking-wider mt-1">Каталог</span>
-</a>
-<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-6 py-2 hover:bg-orange-50 dark:hover:bg-stone-800 rounded-[24px]" href="#">
-<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
-<span class="font-['Be_Vietnam_Pro'] text-xs font-bold uppercase tracking-wider mt-1">Корзина</span>
-</a>
-<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-6 py-2 hover:bg-orange-50 dark:hover:bg-stone-800 rounded-[24px]" href="#">
-<span class="material-symbols-outlined" data-icon="person">person</span>
-<span class="font-['Be_Vietnam_Pro'] text-xs font-bold uppercase tracking-wider mt-1">Профиль</span>
-</a>
-</nav>
-<!-- Contextual FAB (Only on Catalog/Main) -->
-<button class="fixed bottom-28 md:bottom-10 right-6 w-16 h-16 bg-primary-container text-on-primary-container rounded-full shadow-2xl flex items-center justify-center bouncy-hover active:scale-90 z-40">
-<span class="material-symbols-outlined text-3xl" data-icon="help_outline">help_outline</span>
-</button>
+</div>
+</footer>
 </body></html>

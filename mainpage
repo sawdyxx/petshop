@@ -103,7 +103,7 @@
 <div class="flex items-center gap-12">
 <span class="text-3xl font-black text-primary italic font-headline tracking-tighter">PawPalace</span>
 <div class="hidden lg:flex gap-10">
-<a class="font-headline text-lg font-extrabold text-on-surface-variant hover:text-primary transition-all hover:scale-110" href="/catalogue" target="_top">Каталог</a>
+<a class="font-headline text-lg font-extrabold text-on-surface-variant hover:text-primary transition-all hover:scale-110" href="./#/catalogue" target="_top">Каталог</a>
 <a class="font-headline text-lg font-extrabold text-on-surface-variant hover:text-primary transition-all hover:scale-110" href="#">О нас</a>
 <a class="font-headline text-lg font-extrabold text-on-surface-variant hover:text-primary transition-all hover:scale-110" href="#">Контакты</a>
 </div>
