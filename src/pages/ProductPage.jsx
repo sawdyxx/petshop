@@ -2,29 +2,44 @@ import { useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import ProductCard from '../components/ui/ProductCard'
 import SectionTitle from '../components/ui/SectionTitle'
+import { useLanguage } from '../context/useLanguage'
 import { useShop } from '../context/useShop'
-import { products } from '../data/products'
 
 function ProductPage() {
   const { productId } = useParams()
-  const { addToCart } = useShop()
+  const { addToCart, products, isProductsLoading } = useShop()
+  const { formatPrice, localizeProduct, t } = useLanguage()
   const [quantity, setQuantity] = useState(1)
 
   const product = products.find((item) => item.id === Number(productId))
+  const viewProduct = localizeProduct(product)
 
   const similarProducts = useMemo(() => {
     if (!product) return []
     return products
       .filter((item) => item.id !== product.id && item.animalType === product.animalType)
       .slice(0, 3)
-  }, [product])
+  }, [product, products])
+
+  if (isProductsLoading) {
+    return (
+      <div className="page-content">
+        <div className="empty-block large-empty-block">
+          <div>
+            <h3>{t('product.loadingTitle')}</h3>
+            <p>{t('product.loadingText')}</p>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   if (!product) {
     return (
       <div className="page-content">
-        <p className="empty-block">Товар не найден.</p>
+        <p className="empty-block">{t('product.notFound')}</p>
         <Link to="/catalogue" className="btn btn-primary">
-          Вернуться в каталог
+          {t('product.backToCatalog')}
         </Link>
       </div>
     )
@@ -35,58 +50,58 @@ function ProductPage() {
   return (
     <div className="page-content">
       <nav className="product-breadcrumbs">
-        <Link to="/">Главная</Link>
+        <Link to="/">{t('product.homeCrumb')}</Link>
         <span>·</span>
-        <Link to="/catalogue">Каталог</Link>
+        <Link to="/catalogue">{t('product.catalogCrumb')}</Link>
         <span>·</span>
-        <strong>{product.name}</strong>
+        <strong>{viewProduct.name}</strong>
       </nav>
 
       <section className="product-showcase">
         <div className="product-gallery">
           <div className="product-gallery-main">
-            <span className="product-gallery-badge">Хит продаж</span>
-            <img className="product-gallery-image" src={product.image} alt={product.name} />
+            <span className="product-gallery-badge">{t('product.bestseller')}</span>
+            <img className="product-gallery-image" src={product.image} alt={viewProduct.name} />
           </div>
           <div className="product-gallery-thumbs">
             {galleryItems.map((item, index) => (
               <button key={`${item}-${index}`} className={index === 0 ? 'product-thumb active' : 'product-thumb'}>
-                <img src={item} alt={`${product.name} ${index + 1}`} loading="lazy" />
+                <img src={item} alt={`${viewProduct.name} ${index + 1}`} loading="lazy" />
               </button>
             ))}
           </div>
         </div>
 
         <div className="product-showcase-info">
-          <span className="hero-badge">Товар #{product.id}</span>
+          <span className="hero-badge">{t('product.productNumber', { id: product.id })}</span>
           <p className="product-details-meta">
-            {product.animalType} · {product.category}
+            {viewProduct.animalType} · {viewProduct.category}
           </p>
-          <h1>{product.name}</h1>
-          <p className="product-details-rating">Рейтинг: {product.rating}</p>
-          <p className="product-details-price">{product.price} сом</p>
-          <p className="product-details-description">{product.description}</p>
+          <h1>{viewProduct.name}</h1>
+          <p className="product-details-rating">{t('product.rating', { rating: product.rating })}</p>
+          <p className="product-details-price">{formatPrice(product.price)}</p>
+          <p className="product-details-description">{viewProduct.description}</p>
 
           <div className="variant-block">
-            <h4>Вкус</h4>
+            <h4>{t('product.flavor')}</h4>
             <div className="chip-row">
-              <button className="chip active">Классический</button>
-              <button className="chip">С курицей</button>
-              <button className="chip">С овощами</button>
+              <button className="chip active">{t('product.classic')}</button>
+              <button className="chip">{t('product.withChicken')}</button>
+              <button className="chip">{t('product.withVegetables')}</button>
             </div>
           </div>
 
           <div className="variant-block">
-            <h4>Упаковка</h4>
+            <h4>{t('product.package')}</h4>
             <div className="chip-row">
-              <button className="chip">Малая</button>
-              <button className="chip active">Стандартная</button>
-              <button className="chip">Большая</button>
+              <button className="chip">{t('product.small')}</button>
+              <button className="chip active">{t('product.standard')}</button>
+              <button className="chip">{t('product.large')}</button>
             </div>
           </div>
 
           <div className="quantity-control">
-            <span>Количество:</span>
+            <span>{t('product.quantity')}</span>
             <button onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}>-</button>
             <strong>{quantity}</strong>
             <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
@@ -94,37 +109,37 @@ function ProductPage() {
 
           <div className="inline-actions">
             <button className="btn btn-primary product-cta-btn" onClick={() => addToCart(product, quantity)}>
-              Добавить в корзину
+              {t('product.addToCart')}
             </button>
             <Link to="/catalogue" className="btn btn-secondary product-back-btn">
-              Вернуться в каталог
+              {t('product.backToCatalog')}
             </Link>
           </div>
 
           <div className="product-accordion">
             <details open>
-              <summary>Состав</summary>
-              <p>{product.specs.slice(0, 2).join(', ')}</p>
+              <summary>{t('product.composition')}</summary>
+              <p>{viewProduct.specs.slice(0, 2).join(', ')}</p>
             </details>
             <details>
-              <summary>Рекомендации</summary>
-              <p>Подбирайте размер порции по весу питомца и всегда оставляйте свежую воду.</p>
+              <summary>{t('product.recommendations')}</summary>
+              <p>{t('product.recommendationsText')}</p>
             </details>
           </div>
         </div>
       </section>
 
       <section>
-        <SectionTitle title="Характеристики" />
+        <SectionTitle title={t('product.specsTitle')} />
         <ul className="specs-list">
-          {product.specs.map((spec) => (
+          {viewProduct.specs.map((spec) => (
             <li key={spec}>{spec}</li>
           ))}
         </ul>
       </section>
 
       <section>
-        <SectionTitle title="Похожие товары" />
+        <SectionTitle title={t('product.similarTitle')} />
         <div className="products-grid">
           {similarProducts.map((item) => (
             <ProductCard key={item.id} product={item} />

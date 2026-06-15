@@ -1,20 +1,64 @@
+import { useState } from 'react'
+import { useLanguage } from '../context/useLanguage'
+import { submitContactMessage } from '../lib/storeApi'
+
 function ContactPage() {
+  const { t } = useLanguage()
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  })
+  const [submitState, setSubmitState] = useState({ status: 'idle', message: '' })
+
+  const handleChange = (field) => (event) => {
+    setFormData((prev) => ({ ...prev, [field]: event.target.value }))
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setSubmitState({
+        status: 'error',
+        message: t('contact.errorMissingFields'),
+      })
+      return
+    }
+
+    try {
+      setSubmitState({ status: 'loading', message: '' })
+      await submitContactMessage({
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim() || null,
+        message: formData.message.trim(),
+      })
+      setSubmitState({
+        status: 'success',
+        message: t('contact.successMessage'),
+      })
+      setFormData({ name: '', email: '', phone: '', message: '' })
+    } catch (error) {
+      setSubmitState({
+        status: 'error',
+        message: error.message || t('contact.errorSubmit'),
+      })
+    }
+  }
+
   return (
     <div className="page-content contact-page">
       <section className="contact-hero">
         <div className="contact-hero-top">
-          <span className="contact-hero-badge">Контакты</span>
+          <span className="contact-hero-badge">{t('contact.badge')}</span>
           <svg className="contact-hero-mark" viewBox="0 0 64 64" aria-hidden="true">
             <path d="M32 6c-8.9 0-16 7.1-16 16v3h-4c-3.3 0-6 2.7-6 6v17c0 3.3 2.7 6 6 6h40c3.3 0 6-2.7 6-6V31c0-3.3-2.7-6-6-6h-4v-3c0-8.9-7.1-16-16-16Zm-10 19v-3c0-5.5 4.5-10 10-10s10 4.5 10 10v3H22Zm7 9h6v7h-6v-7Z" fill="#fc8200" />
           </svg>
         </div>
-        <h1>
-          Всегда на связи для вас и <span>ваших питомцев</span>
-        </h1>
-        <p>
-          Напишите, позвоните или отправьте запрос через форму. Мы поможем подобрать товары, расскажем про доставку и
-          подскажем по заказу.
-        </p>
+        <h1>{t('contact.title')}</h1>
+        <p>{t('contact.text')}</p>
       </section>
 
       <section className="contact-stats">
@@ -23,27 +67,27 @@ function ContactPage() {
             <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 5v5l4 2-1 2-5-3V7h2Z" fill="#904800" />
           </svg>
           <strong>09:00–21:00</strong>
-          <span>ежедневно</span>
+          <span>{t('contact.hoursTitle')}</span>
         </article>
         <article className="contact-stat-card">
           <svg className="contact-stat-icon" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M4 6h16v11H4V6Zm2 2v7h12V8H6Zm3 10h6v2H9v-2Z" fill="#904800" />
           </svg>
-          <strong>15 мин</strong>
-          <span>среднее время ответа</span>
+          <strong>{t('contact.responseValue')}</strong>
+          <span>{t('contact.responseTimeTitle')}</span>
         </article>
         <article className="contact-stat-card">
           <svg className="contact-stat-icon" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 3 4 7v6c0 5 3.4 9.4 8 10.7 4.6-1.3 8-5.7 8-10.7V7l-8-4Z" fill="#904800" />
           </svg>
-          <strong>7 дней</strong>
-          <span>поддержка без выходных</span>
+          <strong>{t('contact.supportValue')}</strong>
+          <span>{t('contact.supportTitle')}</span>
         </article>
       </section>
 
       <div className="contact-layout">
         <article className="contact-info-card">
-          <h3>Контактная информация</h3>
+          <h3>{t('contact.infoTitle')}</h3>
           <div className="contact-channel-line">
             <div className="contact-channel-icon">
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -51,7 +95,7 @@ function ContactPage() {
               </svg>
             </div>
             <div>
-              <span>Телефон</span>
+              <span>{t('contact.phone')}</span>
               <strong>+996 (700) 123-456</strong>
             </div>
           </div>
@@ -73,7 +117,7 @@ function ContactPage() {
               </svg>
             </div>
             <div>
-              <span>Адрес</span>
+              <span>{t('contact.address')}</span>
               <strong>г. Бишкек, пр. Чуй, 150</strong>
             </div>
           </div>
@@ -84,8 +128,8 @@ function ContactPage() {
               </svg>
             </div>
             <div>
-              <span>График</span>
-              <strong>ежедневно 09:00–21:00</strong>
+              <span>{t('contact.schedule')}</span>
+              <strong>{t('contact.scheduleValue')}</strong>
             </div>
           </div>
           <div className="contact-socials">
@@ -106,26 +150,32 @@ function ContactPage() {
             </button>
           </div>
           <div className="contact-note contact-note-design">
-            <p>Если вопрос срочный, лучше позвонить — так мы ответим быстрее.</p>
+            <p>{t('contact.urgentNote')}</p>
           </div>
         </article>
 
-        <form className="contact-form contact-form-design">
+        <form className="contact-form contact-form-design" onSubmit={handleSubmit}>
           <div className="contact-form-head">
             <svg className="contact-form-icon" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M3 5h18v14H3V5Zm2 2v1l7 4.7L19 8V7l-7 4.7L5 7Z" fill="#fc8200" />
             </svg>
-            <h3>Форма обратной связи</h3>
+            <h3>{t('contact.formTitle')}</h3>
           </div>
-          <input type="text" placeholder="Ваше имя" />
-          <input type="email" placeholder="Ваш email" />
-          <input type="tel" placeholder="Телефон (по желанию)" />
-          <textarea rows="5" placeholder="Сообщение" />
+          <input type="text" placeholder={t('contact.yourName')} value={formData.name} onChange={handleChange('name')} />
+          <input type="email" placeholder={t('contact.yourEmail')} value={formData.email} onChange={handleChange('email')} />
+          <input type="tel" placeholder={t('contact.optionalPhone')} value={formData.phone} onChange={handleChange('phone')} />
+          <textarea rows="5" placeholder={t('contact.message')} value={formData.message} onChange={handleChange('message')} />
+          {submitState.message ? (
+            <div className={submitState.status === 'success' ? 'status-banner success' : 'status-banner error'}>
+              <strong>{submitState.status === 'success' ? t('contact.successTitle') : t('contact.errorTitle')}</strong>
+              <span>{submitState.message}</span>
+            </div>
+          ) : null}
           <div className="form-actions contact-form-actions">
-            <button type="button" className="btn btn-primary">
-              Отправить
+            <button type="submit" className="btn btn-primary" disabled={submitState.status === 'loading'}>
+              {submitState.status === 'loading' ? t('contact.loading') : t('contact.send')}
             </button>
-            <span>Мы ответим на почту или по телефону</span>
+            <span>{t('contact.responseHint')}</span>
           </div>
         </form>
       </div>

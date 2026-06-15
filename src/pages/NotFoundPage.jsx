@@ -1,18 +1,21 @@
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../context/useLanguage'
 
 function NotFoundPage() {
+  const { t } = useLanguage()
+
   return (
     <div className="page-content">
       <section className="not-found">
         <div className="not-found-icon">🐾</div>
         <h1>404</h1>
-        <p>Похоже, этой страницы больше нет или ссылка введена с ошибкой.</p>
+        <p>{t('notFound.text')}</p>
         <div className="inline-actions">
           <Link to="/" className="btn btn-primary">
-            Вернуться на главную
+            {t('notFound.home')}
           </Link>
           <Link to="/catalogue" className="btn btn-secondary">
-            Открыть каталог
+            {t('notFound.catalog')}
           </Link>
         </div>
       </section>

@@ -1,9 +1,79 @@
-import { useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { ShopContext } from './ShopContextValue'
+import { useLanguage } from './useLanguage'
+import { fetchProducts } from '../lib/storeApi'
+
+const CART_STORAGE_KEY = 'pawpalace-cart'
+const FAVORITES_STORAGE_KEY = 'pawpalace-favorites'
+
+function readStoredValue(key, fallbackValue) {
+  if (typeof window === 'undefined') {
+    return fallbackValue
+  }
+
+  try {
+    const storedValue = window.localStorage.getItem(key)
+    return storedValue ? JSON.parse(storedValue) : fallbackValue
+  } catch {
+    return fallbackValue
+  }
+}
 
 export function ShopProvider({ children }) {
-  const [cartItems, setCartItems] = useState([])
-  const [favoriteIds, setFavoriteIds] = useState([])
+  const { t } = useLanguage()
+  const [cartItems, setCartItems] = useState(() => readStoredValue(CART_STORAGE_KEY, []))
+  const [favoriteIds, setFavoriteIds] = useState(() => readStoredValue(FAVORITES_STORAGE_KEY, []))
+  const [products, setProducts] = useState([])
+  const [isProductsLoading, setIsProductsLoading] = useState(true)
+  const [productsError, setProductsError] = useState('')
+
+  const refreshProducts = useCallback(async () => {
+    try {
+      setIsProductsLoading(true)
+      setProductsError('')
+      const nextProducts = await fetchProducts()
+      setProducts(nextProducts)
+    } catch (error) {
+      setProductsError(error.message || t('catalog.errorLoad'))
+    } finally {
+      setIsProductsLoading(false)
+    }
+  }, [t])
+
+  useEffect(() => {
+    refreshProducts()
+  }, [refreshProducts])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return
+    }
+
+    window.localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems))
+  }, [cartItems])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return
+    }
+
+    window.localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(favoriteIds))
+  }, [favoriteIds])
+
+  useEffect(() => {
+    if (!products.length) {
+      return
+    }
+
+    setCartItems((prevItems) =>
+      prevItems
+        .map((item) => {
+          const currentProduct = products.find((product) => product.id === item.id)
+          return currentProduct ? { ...currentProduct, quantity: item.quantity } : item
+        })
+        .filter((item) => item.quantity > 0)
+    )
+  }, [products])
 
   // Добавляем товар в корзину: если уже есть, увеличиваем количество
   const addToCart = (product, quantity = 1) => {
@@ -30,6 +100,10 @@ export function ShopProvider({ children }) {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== productId))
   }
 
+  const clearCart = () => {
+    setCartItems([])
+  }
+
   const toggleFavorite = (productId) => {
     setFavoriteIds((prevIds) =>
       prevIds.includes(productId) ? prevIds.filter((id) => id !== productId) : [...prevIds, productId]
@@ -51,9 +125,14 @@ export function ShopProvider({ children }) {
   const value = {
     cartItems,
     favoriteIds,
+    products,
+    isProductsLoading,
+    productsError,
+    refreshProducts,
     addToCart,
     changeCartItemQuantity,
     removeFromCart,
+    clearCart,
     toggleFavorite,
     isFavorite,
     cartSummary

@@ -1,8 +1,30 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { useAdmin } from '../../context/useAdmin'
+import { useLanguage } from '../../context/useLanguage'
 import { useShop } from '../../context/useShop'
+import LanguageSwitcher from '../ui/LanguageSwitcher'
 
 function Header() {
   const { cartSummary, favoriteIds } = useShop()
+  const { isAdmin } = useAdmin()
+  const { t } = useLanguage()
+  const location = useLocation()
+  const navigate = useNavigate()
+  const currentQuery = new URLSearchParams(location.search).get('q') ?? ''
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault()
+
+    const nextParams = new URLSearchParams()
+    const formData = new FormData(event.currentTarget)
+    const query = String(formData.get('q') ?? '').trim()
+
+    if (query) {
+      nextParams.set('q', query)
+    }
+
+    navigate(`/catalogue${nextParams.toString() ? `?${nextParams.toString()}` : ''}`)
+  }
 
   return (
     <header className="site-header">
@@ -12,27 +34,38 @@ function Header() {
             PawPalace
           </Link>
           <nav className="main-nav">
-            <NavLink to="/catalogue">Каталог</NavLink>
-            <NavLink to="/about">О нас</NavLink>
-            <NavLink to="/contacts">Контакты</NavLink>
+            <NavLink to="/catalogue">{t('header.navCatalog')}</NavLink>
+            <NavLink to="/about">{t('header.navAbout')}</NavLink>
+            <NavLink to="/contacts">{t('header.navContacts')}</NavLink>
           </nav>
         </div>
 
         <div className="header-actions">
-          <div className="header-search">
+          <LanguageSwitcher />
+          <form className="header-search" onSubmit={handleSearchSubmit}>
             <span>⌕</span>
-            <input placeholder="Поиск..." type="text" />
-          </div>
-          <NavLink to="/favorites" className="header-icon-link" aria-label="Избранное">
+            <input
+              key={`${location.pathname}${location.search}`}
+              name="q"
+              placeholder={t('header.searchPlaceholder')}
+              type="text"
+              defaultValue={currentQuery}
+            />
+          </form>
+          <NavLink to="/favorites" className="header-icon-link" aria-label={t('header.favoritesAria')}>
             <span>♡</span>
             <small className="header-icon-count">{favoriteIds.length}</small>
           </NavLink>
-          <NavLink to="/cart" className="header-icon-link" aria-label="Корзина">
+          <NavLink to="/cart" className="header-icon-link" aria-label={t('header.cartAria')}>
             <span>🛒</span>
             <small className="header-icon-count">{cartSummary.itemsCount}</small>
           </NavLink>
-          <Link to="/contacts" className="header-avatar" aria-label="Профиль">
-            🐾
+          <Link
+            to={isAdmin ? '/admin' : '/contacts'}
+            className="header-avatar"
+            aria-label={isAdmin ? t('header.adminAria') : t('header.profileAria')}
+          >
+            {isAdmin ? '⚙' : '🐾'}
           </Link>
         </div>
       </div>

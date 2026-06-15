@@ -29,6 +29,12 @@
   font-weight: 600;
 }
 
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .btn-primary {
   background: var(--primary);
   color: #ffffff;
